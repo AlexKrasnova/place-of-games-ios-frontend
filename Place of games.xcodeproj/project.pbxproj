@@ -13,6 +13,9 @@
 		E90517F0270DD5B600B11967 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90517EE270DD5B600B11967 /* Main.storyboard */; };
 		E90517F2270DD5B700B11967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90517F1270DD5B700B11967 /* Assets.xcassets */; };
 		E90517F5270DD5B700B11967 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90517F3270DD5B700B11967 /* LaunchScreen.storyboard */; };
+		F0F63F33270F3D250060EEC3 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F63F32270F3D250060EEC3 /* LocationModel.swift */; };
+		F0F63F37270F3D990060EEC3 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F63F36270F3D980060EEC3 /* LocationTableViewCell.swift */; };
+		F0F63F3A270F3DB30060EEC3 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F63F39270F3DB30060EEC3 /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		E90517F1270DD5B700B11967 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E90517F4270DD5B700B11967 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E90517F6270DD5B700B11967 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0F63F32270F3D250060EEC3 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		F0F63F36270F3D980060EEC3 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		F0F63F39270F3DB30060EEC3 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 		E90517E7270DD5B600B11967 /* Place of games */ = {
 			isa = PBXGroup;
 			children = (
+				F0F63F31270F3D040060EEC3 /* Model */,
+				F0F63F35270F3D480060EEC3 /* LocationViewController */,
 				E90517E8270DD5B600B11967 /* AppDelegate.swift */,
 				E90517EA270DD5B600B11967 /* SceneDelegate.swift */,
 				E90517EC270DD5B600B11967 /* ViewController.swift */,
@@ -65,6 +73,23 @@
 				E90517F6270DD5B700B11967 /* Info.plist */,
 			);
 			path = "Place of games";
+			sourceTree = "<group>";
+		};
+		F0F63F31270F3D040060EEC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0F63F32270F3D250060EEC3 /* LocationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0F63F35270F3D480060EEC3 /* LocationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F0F63F39270F3DB30060EEC3 /* LocationViewController.swift */,
+				F0F63F36270F3D980060EEC3 /* LocationTableViewCell.swift */,
+			);
+			path = LocationViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +162,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0F63F33270F3D250060EEC3 /* LocationModel.swift in Sources */,
+				F0F63F37270F3D990060EEC3 /* LocationTableViewCell.swift in Sources */,
 				E90517ED270DD5B600B11967 /* ViewController.swift in Sources */,
+				F0F63F3A270F3DB30060EEC3 /* LocationViewController.swift in Sources */,
 				E90517E9270DD5B600B11967 /* AppDelegate.swift in Sources */,
 				E90517EB270DD5B600B11967 /* SceneDelegate.swift in Sources */,
 			);

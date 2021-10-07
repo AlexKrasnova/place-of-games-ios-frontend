@@ -8,16 +8,18 @@
 import UIKit
 
 class LocationTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet weak var photoLocation: UIImageView!
+    @IBOutlet weak var nameOfSport: UILabel!
+    @IBOutlet weak var addressLocation: UILabel!
+   
+    
+    
+    func setData(photo: UIImage, name: String, address: String) {
+        photoLocation.image = photo
+        nameOfSport.text = name
+        addressLocation.text = address
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
+
