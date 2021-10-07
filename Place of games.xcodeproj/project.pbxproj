@@ -16,6 +16,7 @@
 		F0F63F33270F3D250060EEC3 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F63F32270F3D250060EEC3 /* LocationModel.swift */; };
 		F0F63F37270F3D990060EEC3 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F63F36270F3D980060EEC3 /* LocationTableViewCell.swift */; };
 		F0F63F3A270F3DB30060EEC3 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F63F39270F3DB30060EEC3 /* LocationViewController.swift */; };
+		F0F63F49270F871D0060EEC3 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0F63F48270F871D0060EEC3 /* Location.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F0F63F32270F3D250060EEC3 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		F0F63F36270F3D980060EEC3 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		F0F63F39270F3DB30060EEC3 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		F0F63F48270F871D0060EEC3 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				F0F63F39270F3DB30060EEC3 /* LocationViewController.swift */,
 				F0F63F36270F3D980060EEC3 /* LocationTableViewCell.swift */,
+				F0F63F48270F871D0060EEC3 /* Location.storyboard */,
 			);
 			path = LocationViewController;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			files = (
 				E90517F5270DD5B700B11967 /* LaunchScreen.storyboard in Resources */,
 				E90517F2270DD5B700B11967 /* Assets.xcassets in Resources */,
+				F0F63F49270F871D0060EEC3 /* Location.storyboard in Resources */,
 				E90517F0270DD5B600B11967 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

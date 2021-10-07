@@ -9,6 +9,7 @@ import UIKit
 class LocationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
    @IBOutlet weak var locationTableView: UITableView!
+   
     var location = LocationModel.fetchLocation()
     
     override func viewDidLoad() {
