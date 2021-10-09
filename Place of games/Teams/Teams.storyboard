@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qrc-GQ-Dum">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Мои команды-->
+        <scene sceneID="Exh-Y4-VnB">
+            <objects>
+                <viewController id="E2O-oC-Iqv" customClass="MyTeamsViewController" customModule="Place_of_games" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZWP-M9-Lu6" customClass="MyT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nw0-D6-w3u">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="C2y-TL-hvt">
+                                    <rect key="frame" x="0.0" y="196.00000034679067" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyTeamsTableViewCell" rowHeight="147" id="Ayb-QK-5Df" customClass="MyTeamsTableViewCell" customModule="Place_of_games" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="147"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ayb-QK-5Df" id="9A0-mX-Lyn">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="147"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bol-ke-AzE">
+                                                    <rect key="frame" x="8" y="8" width="131" height="131"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="bol-ke-AzE" secondAttribute="height" multiplier="1:1" id="1Lc-JH-jbu"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Название команды" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSw-ew-h5W">
+                                                    <rect key="frame" x="175" y="21" width="153" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Капитан команды" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzS-cA-Bw9">
+                                                    <rect key="frame" x="236" y="99" width="142" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bol-ke-AzE" firstAttribute="top" secondItem="9A0-mX-Lyn" secondAttribute="top" constant="8" id="9Pp-x8-D0U"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="HzS-cA-Bw9" secondAttribute="trailing" constant="16" id="Ald-wR-kcL"/>
+                                                <constraint firstItem="bol-ke-AzE" firstAttribute="leading" secondItem="9A0-mX-Lyn" secondAttribute="leading" constant="8" id="DJp-Ks-CPN"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HzS-cA-Bw9" secondAttribute="bottom" constant="16" id="ZlH-QX-DxS"/>
+                                                <constraint firstAttribute="bottom" secondItem="bol-ke-AzE" secondAttribute="bottom" constant="8" id="Ztb-qg-wrn"/>
+                                                <constraint firstItem="RSw-ew-h5W" firstAttribute="leading" secondItem="bol-ke-AzE" secondAttribute="trailing" constant="36" id="efX-og-2CU"/>
+                                                <constraint firstItem="RSw-ew-h5W" firstAttribute="top" secondItem="9A0-mX-Lyn" secondAttribute="topMargin" constant="16" id="kUe-EF-YtR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="myTeamsImageView" destination="bol-ke-AzE" id="gn3-eS-Fpo"/>
+                                            <outlet property="teamCaptainLabel" destination="HzS-cA-Bw9" id="6sn-5n-jHC"/>
+                                            <outlet property="teamNameLabel" destination="RSw-ew-h5W" id="OQ1-Ej-vFK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="E2O-oC-Iqv" id="UBp-DU-oZf"/>
+                                    <outlet property="delegate" destination="E2O-oC-Iqv" id="R1c-KV-hk5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eLX-rJ-DMW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eLX-rJ-DMW" firstAttribute="top" secondItem="Nw0-D6-w3u" secondAttribute="top" id="ULI-kt-SCy"/>
+                            <constraint firstItem="eLX-rJ-DMW" firstAttribute="trailing" secondItem="Nw0-D6-w3u" secondAttribute="trailing" id="bRS-WW-1FR"/>
+                            <constraint firstItem="Nw0-D6-w3u" firstAttribute="leading" secondItem="eLX-rJ-DMW" secondAttribute="leading" id="eYu-jT-PCa"/>
+                            <constraint firstItem="eLX-rJ-DMW" firstAttribute="bottom" secondItem="Nw0-D6-w3u" secondAttribute="bottom" id="xXz-lQ-qWz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Мои команды" id="ACJ-wQ-UsQ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Gjm-nV-khw"/>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="JXq-z8-5XY">
+                                <connections>
+                                    <segue destination="WAu-qV-tTB" kind="show" id="fmy-i1-7UD"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="search" id="xAO-C4-XXS">
+                                <connections>
+                                    <segue destination="Pua-DB-bfL" kind="show" id="ZZz-SK-J9m"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Nw0-D6-w3u" id="Kgh-Yj-ZAj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dER-Xg-Cdn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="308.69565217391306" y="-354.24107142857139"/>
+        </scene>
+        <!--Создать свою команду-->
+        <scene sceneID="Gcl-vp-lBu">
+            <objects>
+                <viewController id="Pua-DB-bfL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fgL-FS-YxS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="VKs-La-y3E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Создать свою команду" id="R13-qd-WPT">
+                        <barButtonItem key="backBarButtonItem" title="   " id="fbi-o7-mgZ"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wm4-R6-0Pd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="171"/>
+        </scene>
+        <!--Поиск команд-->
+        <scene sceneID="k5L-Po-nKQ">
+            <objects>
+                <viewController id="WAu-qV-tTB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WYy-hi-9tL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="nED-HQ-cC4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Поиск команд" id="SF7-yY-DkD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gtg-yq-YBE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="-474"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="c2V-8F-7Sv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qrc-GQ-Dum" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZWd-J6-7JY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="E2O-oC-Iqv" kind="relationship" relationship="rootViewController" id="MZh-a1-XQY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rMA-V9-JWV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-468.11594202898556" y="-354.24107142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

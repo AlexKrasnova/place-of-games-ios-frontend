@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A90E968D270F21C500370583 /* Teams.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90E968C270F21C500370583 /* Teams.storyboard */; };
+		A90E9690270F2DC900370583 /* MyTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E968F270F2DC900370583 /* MyTeamsViewController.swift */; };
+		A90E9692270F2F0400370583 /* MyTeamsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E9691270F2F0400370583 /* MyTeamsTableViewCell.swift */; };
+		A90E9694270F34BC00370583 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E9693270F34BC00370583 /* Team.swift */; };
 		5083761C2710501800F2A815 /* DefaultGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5083761A2710501800F2A815 /* DefaultGames.swift */; };
 		5083761D2710501800F2A815 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5083761B2710501800F2A815 /* GameModel.swift */; };
 		508376222710505000F2A815 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5083761F2710505000F2A815 /* GameCollectionViewCell.swift */; };
@@ -25,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A90E968C270F21C500370583 /* Teams.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Teams.storyboard; sourceTree = "<group>"; };
+		A90E968F270F2DC900370583 /* MyTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamsViewController.swift; sourceTree = "<group>"; };
+		A90E9691270F2F0400370583 /* MyTeamsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamsTableViewCell.swift; sourceTree = "<group>"; };
+		A90E9693270F34BC00370583 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		5083761A2710501800F2A815 /* DefaultGames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultGames.swift; sourceTree = "<group>"; };
 		5083761B2710501800F2A815 /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		5083761F2710505000F2A815 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -55,6 +63,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A90E968E270F2D2C00370583 /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+				A90E968C270F21C500370583 /* Teams.storyboard */,
+				A90E968F270F2DC900370583 /* MyTeamsViewController.swift */,
+				A90E9691270F2F0400370583 /* MyTeamsTableViewCell.swift */,
+				A90E9693270F34BC00370583 /* Team.swift */,
+			);
+			path = Teams;
+			sourceTree = "<group>";
+		};
 		508376192710501800F2A815 /* Games */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +117,7 @@
 				5083761E2710502600F2A815 /* GamesViewControllers */,
 				F0F63F31270F3D040060EEC3 /* Model */,
 				F0F63F35270F3D480060EEC3 /* LocationViewController */,
+				A90E968E270F2D2C00370583 /* Teams */,
 				E90517E8270DD5B600B11967 /* AppDelegate.swift */,
 				E90517EA270DD5B600B11967 /* SceneDelegate.swift */,
 				E90517EE270DD5B600B11967 /* Main.storyboard */,
@@ -184,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90517F5270DD5B700B11967 /* LaunchScreen.storyboard in Resources */,
+				A90E968D270F21C500370583 /* Teams.storyboard in Resources */,
 				508376262710505C00F2A815 /* GamesStoryboard.storyboard in Resources */,
 				E90517F2270DD5B700B11967 /* Assets.xcassets in Resources */,
 				F0F63F49270F871D0060EEC3 /* Location.storyboard in Resources */,
@@ -203,6 +224,10 @@
 				5083761C2710501800F2A815 /* DefaultGames.swift in Sources */,
 				F0F63F37270F3D990060EEC3 /* LocationTableViewCell.swift in Sources */,
 				F0F63F3A270F3DB30060EEC3 /* LocationViewController.swift in Sources */,
+				A90E9694270F34BC00370583 /* Team.swift in Sources */,
+				E90517ED270DD5B600B11967 /* ViewController.swift in Sources */,
+				A90E9690270F2DC900370583 /* MyTeamsViewController.swift in Sources */,
+				A90E9692270F2F0400370583 /* MyTeamsTableViewCell.swift in Sources */,
 				508376222710505000F2A815 /* GameCollectionViewCell.swift in Sources */,
 				5083761D2710501800F2A815 /* GameModel.swift in Sources */,
 				E90517E9270DD5B600B11967 /* AppDelegate.swift in Sources */,
