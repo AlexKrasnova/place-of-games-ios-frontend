@@ -16,8 +16,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? GameCollectionViewCell {
             
             cell.gameName.text = games[indexPath.row].name
-            cell.gameImage.image = games[indexPath.row].image
-            cell.gameAddress.text = games[indexPath.row].place?.address
+            cell.gameImage.image = UIImage(named: "1111")
+            cell.gameAddress.text = games[indexPath.row].place.address
             cell.gameCount.text = "\(games[indexPath.row].numberOfParticipants) / \(games[indexPath.row].maxNumberOfParticipants)"
             
             cell.layer.cornerRadius = 20
@@ -29,33 +29,35 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var games: [GameModel]!
-    var defaultGames: DefaultGames!
-    
+    var games: [Game] = []
+    let service = EventService()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        defaultGames = DefaultGames()
-        games = defaultGames.getGames()
-        
+        service.getEvents { games in
+            self.games = games
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailsVC" {
             if let destinationVC = segue.destination as? DetailViewController {
-                destinationVC.games = sender as? GameModel
+                destinationVC.game = sender as? Game
             }
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let games = games?[indexPath.row] else { return }
-        performSegue(withIdentifier: "toDetailsVC", sender: games)
+        let game = games[indexPath.row]
+        performSegue(withIdentifier: "toDetailsVC", sender: game)
     }
-    
     
     @IBAction func addNewGameButtonTapped(_ sender: UIButton) {
         
