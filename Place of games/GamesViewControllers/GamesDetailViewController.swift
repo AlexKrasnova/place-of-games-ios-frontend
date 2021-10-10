@@ -17,7 +17,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var participantsLabel: UILabel!
     
-    var games: GameModel?
+    var game: Game?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +26,13 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        gameNameLabel.text = games?.name
-        gameImage.image = games?.image
-        timeLabel.text = "Time: \(games!.time)"
-        durationLabel.text = "Duration: \(games!.duration) min"
-        placeLabel.text = "Where: \(games!.place!.name)"
-        addressLabel.text = "Address \(games!.place!.address)"
-        participantsLabel.text = "\(games!.numberOfParticipants) of \(games!.maxNumberOfParticipants)"
+        gameNameLabel.text = game?.name
+        gameImage.image = UIImage(named: "1111")
+        timeLabel.text = "Time: \(game!.time)"
+        durationLabel.text = "Duration: \(game!.duration) min"
+        placeLabel.text = "Where: \(game!.place.name)"
+        addressLabel.text = "Address \(game!.place.address)"
+        participantsLabel.text = "\(game!.numberOfParticipants) of \(game!.maxNumberOfParticipants)"
         
     }
     

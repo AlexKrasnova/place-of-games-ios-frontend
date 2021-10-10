@@ -8,19 +8,20 @@
 
 import UIKit
 
-struct GameModel {
+struct Game: Codable {
     let id: Int
     let name, time: String
     let duration: Int
-    let place: Place?
+    let place: Place
     let maxNumberOfParticipants: Int
     let numberOfParticipants: Int
-    let image: UIImage
+    let category: String = "Категория"
 }
 
 // MARK: - Place
-struct Place {
+struct Place: Codable {
     let id: Int
     let name: String
     let address: String
+    let description: String = "Описание"
 }
