@@ -15,7 +15,7 @@ struct Game: Codable {
     let place: Place
     let maxNumberOfParticipants: Int
     let numberOfParticipants: Int
-    let category: String = "Категория"
+    let category: String
 }
 
 // MARK: - Place
@@ -23,5 +23,5 @@ struct Place: Codable {
     let id: Int
     let name: String
     let address: String
-    let description: String = "Описание"
+    let description: String
 }
