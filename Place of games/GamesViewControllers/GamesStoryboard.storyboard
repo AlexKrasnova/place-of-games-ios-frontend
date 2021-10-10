@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="APU-MO-F1P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BAO-iH-EAx">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" modalPresentationStyle="fullScreen" id="APU-MO-F1P" customClass="MainViewController" customModule="Place_of_games" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jj7-Cv-dPa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EPj-Xd-J2g">
-                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
+                                <rect key="frame" x="0.0" y="168" width="414" height="645"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="20" id="dD6-hD-BNd">
                                     <size key="itemSize" width="222" height="305"/>
                                     <size key="estimatedItemSize" width="160" height="250"/>
@@ -85,14 +85,13 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Игры поблизости" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKP-2P-A2B">
-                                <rect key="frame" x="20" y="64" width="214.5" height="30"/>
+                                <rect key="frame" x="20" y="108" width="214.5" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olg-wL-oJL">
-                                <rect key="frame" x="350" y="64" width="44" height="31"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <rect key="frame" x="374" y="108" width="20" height="20"/>
                                 <connections>
                                     <action selector="addNewGameButtonTapped:" destination="APU-MO-F1P" eventType="touchUpInside" id="Gcr-Ao-QLE"/>
                                 </connections>
@@ -111,6 +110,7 @@
                             <constraint firstItem="hKP-2P-A2B" firstAttribute="leading" secondItem="nXe-Tp-BFL" secondAttribute="leading" constant="20" id="pvT-k5-Knb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="GsA-hi-vm1"/>
                     <connections>
                         <outlet property="collectionView" destination="EPj-Xd-J2g" id="tf2-X7-kWG"/>
                         <segue destination="1b0-TK-aIv" kind="show" identifier="toDetailsVC" id="wok-L8-9O7"/>
@@ -118,50 +118,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQa-8L-TGZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="828.98550724637687" y="79.6875"/>
+            <point key="canvasLocation" x="1739.1304347826087" y="79.6875"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Vhl-t3-Msn">
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" id="1b0-TK-aIv" customClass="DetailViewController" customModule="Place_of_games" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ULW-Gs-wFi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Игры поблизости" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSg-7c-q53">
-                                <rect key="frame" x="20" y="20" width="214.5" height="30"/>
+                                <rect key="frame" x="20" y="108" width="214.5" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ua-KT-U86">
-                                <rect key="frame" x="352.5" y="20" width="41.5" height="32"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <rect key="frame" x="364" y="108" width="30" height="30"/>
                                 <connections>
                                     <action selector="dismissButtonTapped:" destination="1b0-TK-aIv" eventType="touchUpInside" id="5nr-KE-InI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Rs-Pb-9vt">
-                                <rect key="frame" x="30" y="728" width="354" height="50"/>
+                                <rect key="frame" x="30" y="733" width="354" height="50"/>
                                 <color key="backgroundColor" red="0.34901961679999999" green="0.67450982329999998" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="IDV-Qh-Wax"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Присоединиться"/>
                                 <connections>
                                     <action selector="actionButtonPresssed:" destination="1b0-TK-aIv" eventType="touchUpInside" id="D54-O5-mLf"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="evb-za-aQw">
-                                <rect key="frame" x="0.0" y="80" width="414" height="250"/>
+                                <rect key="frame" x="0.0" y="168" width="414" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="oHT-NP-xAy"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iZe-Yr-fkL">
-                                <rect key="frame" x="20" y="380" width="374" height="182.5"/>
+                                <rect key="frame" x="20" y="468" width="374" height="182.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeb-ua-LQn">
                                         <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
@@ -227,11 +225,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Un-HF-nAT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1707" y="80"/>
+            <point key="canvasLocation" x="2615.9420289855075" y="79.6875"/>
+        </scene>
+        <!--Игры-->
+        <scene sceneID="62M-3k-lOw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BAO-iH-EAx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Игры" image="icon-games" selectedImage="icon-games" id="6Al-zM-Qn4"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IhS-ak-zhF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="APU-MO-F1P" kind="relationship" relationship="rootViewController" id="Sco-ms-0Xp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Fl-95-Jmd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828.98550724637687" y="79.6875"/>
         </scene>
     </scenes>
     <resources>
         <image name="1111" width="640" height="360"/>
+        <image name="icon-games" width="20" height="23"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
