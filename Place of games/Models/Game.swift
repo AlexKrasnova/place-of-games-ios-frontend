@@ -15,7 +15,7 @@ struct Game: Codable {
     let place: Place
     let maxNumberOfParticipants: Int
     let numberOfParticipants: Int
-    let category: String
+    let category: Category
 }
 
 // MARK: - Place
