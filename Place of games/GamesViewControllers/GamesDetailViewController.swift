@@ -27,7 +27,7 @@ class DetailViewController: UIViewController {
         super.viewWillAppear(animated)
         
         gameNameLabel.text = game?.name
-        gameImage.image = UIImage(named: "1111")
+        gameImage.image = game?.category.image
         timeLabel.text = "Time: \(game!.time)"
         durationLabel.text = "Duration: \(game!.duration) min"
         placeLabel.text = "Where: \(game!.place.name)"
