@@ -16,7 +16,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? GameCollectionViewCell {
             
             cell.gameName.text = games[indexPath.row].name
-            cell.gameImage.image = UIImage(named: "1111")
+            cell.gameImage.image = games[indexPath.row].category.image
             cell.gameAddress.text = games[indexPath.row].place.address
             cell.gameCount.text = "\(games[indexPath.row].numberOfParticipants) / \(games[indexPath.row].maxNumberOfParticipants)"
             
