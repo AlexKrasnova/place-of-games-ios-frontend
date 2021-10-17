@@ -11,7 +11,7 @@ enum AuthAPI {
     case token(data: AuthData)
     case register(data: RegisterData)
     
-    var metod: String {
+    var method: String {
         switch self {
         case .token, .register:
             return "POST"
@@ -37,6 +37,7 @@ enum AuthAPI {
         url.appendPathComponent(path)
         
         var request = URLRequest(url: url)
+        request.httpMethod = method
         var httpBody: Data?
         switch self {
         case .token(let data):
@@ -46,6 +47,7 @@ enum AuthAPI {
         }
         
         if let httpBody = httpBody {
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = httpBody
         }
         return request

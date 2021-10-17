@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class GamesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return games.count
     }
@@ -37,11 +37,22 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         collectionView.delegate = self
         collectionView.dataSource = self
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       
         
-        service.getEvents { games in
-            self.games = games
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
+    }
+    
+    func loadData() {
+        if AuthService.shared.token != nil {
+            service.getEvents { games in
+                self.games = games
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
             }
         }
     }
