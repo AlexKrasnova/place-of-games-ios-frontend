@@ -9,6 +9,9 @@ import UIKit
 
 class AuthorizationViewController: UIViewController {
     
+    var login: String?
+    var pass: String?
+    
     @IBOutlet weak var loginField: UITextField!
     
     @IBOutlet weak var passField: UITextField!
