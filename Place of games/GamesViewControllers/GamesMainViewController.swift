@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class GamesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return games.count
     }
@@ -16,7 +16,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? GameCollectionViewCell {
             
             cell.gameName.text = games[indexPath.row].name
-            cell.gameImage.image = UIImage(named: "1111")
+            cell.gameImage.image = games[indexPath.row].category.image
             cell.gameAddress.text = games[indexPath.row].place.address
             cell.gameCount.text = "\(games[indexPath.row].numberOfParticipants) / \(games[indexPath.row].maxNumberOfParticipants)"
             
@@ -37,11 +37,22 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         collectionView.delegate = self
         collectionView.dataSource = self
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       
         
-        service.getEvents { games in
-            self.games = games
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
+    }
+    
+    func loadData() {
+        if AuthService.shared.token != nil {
+            service.getEvents { games in
+                self.games = games
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
             }
         }
     }

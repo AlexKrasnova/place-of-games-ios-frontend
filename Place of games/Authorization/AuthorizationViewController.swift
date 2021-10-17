@@ -16,7 +16,19 @@ class AuthorizationViewController: UIViewController {
     
     @IBOutlet weak var passField: UITextField!
     
-    @IBAction func loginButton(_ sender: UIButton) {
+    @IBAction func login(_ sender: UIButton) {
+        AuthService.shared.login(login: loginField.text!, password: passField.text!) { error in
+            if let errorModel = error {
+                DispatchQueue.main.async {
+                    self.errorLabel.text = errorModel.message
+                    self.errorLabel.alpha = 1
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     @IBOutlet weak var errorLabel: UILabel!
@@ -35,6 +47,7 @@ class AuthorizationViewController: UIViewController {
     }
     
     func setUpElements () {
+        
         errorLabel.alpha = 0
     }
 
