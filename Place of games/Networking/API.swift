@@ -21,7 +21,7 @@ enum API {
     }
     
     var baseUrl: String {
-        "http://localhost:8089/api/v1"
+        "http://localhost:8080/api/v1"
     }
     
     var path: String {
@@ -38,6 +38,9 @@ enum API {
         url.appendPathComponent(path)
         
         var request = URLRequest(url: url)
+        if let token = AuthService.shared.token {
+            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
         
         return request
     }
