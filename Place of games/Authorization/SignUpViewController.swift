@@ -44,23 +44,36 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
     @IBAction func signUpButton(_ sender: Any) {
         
-        if repeatPassTextField.text == passTextField.text && loginTextField.text != "" && passTextField.text != "" && nameTextField.text != "" && repeatPassTextField.text != "" {
-        
-            errorLabel.alpha = 1
-            errorLabel.textColor = .green
-            errorLabel.text = "Регистрация прошла успешно!"
-        } else {
-            print("Ошибка")
-            errorLabel.alpha = 1
+        AuthService.shared.register(login: loginTextField.text!, password: passTextField.text!, name: nameTextField.text!) { error in
+            if let errorModel = error {
+                DispatchQueue.main.async {
+                    self.errorLabel.text = errorModel.message
+                    self.errorLabel.alpha = 1
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
         }
         
-        if repeatPassTextField.text == passTextField.text {
-            signUpButton.isHidden = false
-            signUpButton.isEnabled = true
-            signUpButton.alpha = 1
-        } else {
-            errorLabel.alpha = 1
-            errorLabel.text = "Пароли не совпадают"
-        }
+//        if repeatPassTextField.text == passTextField.text && loginTextField.text != "" && passTextField.text != "" && nameTextField.text != "" && repeatPassTextField.text != "" {
+//
+//            errorLabel.alpha = 1
+//            errorLabel.textColor = .green
+//            errorLabel.text = "Регистрация прошла успешно!"
+//        } else {
+//            print("Ошибка")
+//            errorLabel.alpha = 1
+//        }
+//
+//        if repeatPassTextField.text == passTextField.text {
+//            signUpButton.isHidden = false
+//            signUpButton.isEnabled = true
+//            signUpButton.alpha = 1
+//        } else {
+//            errorLabel.alpha = 1
+//            errorLabel.text = "Пароли не совпадают"
+//        }
     }
 }
