@@ -7,44 +7,56 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class GamesDetailViewController: UIViewController {
     
-    @IBOutlet weak var gameNameLabel: UILabel!
+   
+    @IBOutlet weak var joinToGameButton: UIButton!
+    @IBOutlet weak var gameAddressLabel: UILabel!
+    @IBOutlet weak var gameParticipantsLabel: UILabel!
+    @IBOutlet weak var gameTimeLabel: UILabel!
+    @IBOutlet weak var gameName: UILabel!
     @IBOutlet weak var gameImage: UIImageView!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var durationLabel: UILabel!
-    @IBOutlet weak var placeLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var participantsLabel: UILabel!
+    
     
     var game: Game?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        gameNameLabel.text = game?.name
-        gameImage.image = game?.category.image
-        timeLabel.text = "Time: \(game!.time)"
-        durationLabel.text = "Duration: \(game!.duration) min"
-        placeLabel.text = "Where: \(game!.place.name)"
-        addressLabel.text = "Address \(game!.place.address)"
-        participantsLabel.text = "\(game!.numberOfParticipants) of \(game!.maxNumberOfParticipants)"
+        setupUI(game: game!)
+        joinToGameButton.addTarget(self, action: #selector(joinToGame), for: .touchUpInside)
         
     }
     
-    @IBAction func dismissButtonTapped(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+    func setupUI(game: Game) {
+        
+        gameName.text = game.name
+        gameImage.image = game.category.image
+        gameImage.layer.cornerRadius = 20
+        gameTimeLabel.text = "\(game.time) (Длительность: \(game.duration) мин"
+        gameAddressLabel.text = game.place.address
+        gameParticipantsLabel.text = "Занято \(game.numberOfParticipants) из \(game.maxNumberOfParticipants)"
+        joinToGameButton.setTitle("Записаться на игру", for: .normal)
+        
+        
+        if game.numberOfParticipants == game.maxNumberOfParticipants {
+            joinToGameButton.backgroundColor = UIColor.systemGray5
+            joinToGameButton.setTitle("Мест нет", for: .normal)
+        }
+        
+        
+        
     }
+    
+    @objc func joinToGame() {
+        
+    }
+    
 
-    @IBAction func actionButtonPresssed(_ sender: UIButton) {
-        
-        let alert = UIAlertController(title: "Временно недоступно", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-        
-    }
+    
 }
