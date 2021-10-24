@@ -8,6 +8,10 @@
 import UIKit
 
 class MainViewController: UITabBarController {
+    static func storyboardIstance() -> MainViewController? {
+        let mainStoryboard = UIStoryboard(name: String(describing: self), bundle: nil)
+        return mainStoryboard.instantiateViewController(withIdentifier: "Main") as? MainViewController
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,7 @@ class MainViewController: UITabBarController {
             let viewController = authStoriboard.instantiateInitialViewController()!
             viewController.modalPresentationStyle = .fullScreen
             present(viewController, animated: false, completion: nil)
+            
         } else {
             if let gamesNavVC = viewControllers?.first as? UINavigationController,
                let gamesVC = gamesNavVC.viewControllers.first as? GamesViewController {

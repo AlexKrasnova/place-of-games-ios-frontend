@@ -52,9 +52,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
+                    _ = self.navigationController?.popViewController(animated: true)
+                    
                 }
-            }
         }
         
 //        if repeatPassTextField.text == passTextField.text && loginTextField.text != "" && passTextField.text != "" && nameTextField.text != "" && repeatPassTextField.text != "" {
@@ -75,5 +75,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 //            errorLabel.alpha = 1
 //            errorLabel.text = "Пароли не совпадают"
 //        }
+        }
     }
 }

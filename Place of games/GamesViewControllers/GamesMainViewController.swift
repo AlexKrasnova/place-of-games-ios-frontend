@@ -57,6 +57,7 @@ class GamesViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailsVC" {
             if let destinationVC = segue.destination as? DetailViewController {
