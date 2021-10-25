@@ -9,6 +9,7 @@ import UIKit
 
 class GamesMainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return games.count
     }
@@ -32,6 +33,7 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
         return CGSize(width: UIScreen.main.bounds.width - 20, height: 130)
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailsVC" {
             if let destinationVC = segue.destination as? GamesDetailViewController {
@@ -53,6 +55,7 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
     
     var games: [Game] = []
     let service = EventService()
+    var newGame: Game?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +69,7 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        
+        
         
     }
     
@@ -81,57 +85,26 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     
-    
-    
-    
-    @IBAction func addNewGameButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         
-        let alert = UIAlertController(title: "Пока что новую игру не создать", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
+        let destinationVC = UIStoryboard(name: "GamesStoryboard", bundle: nil).instantiateViewController(withIdentifier: "AddNewGameViewController")
+        present(destinationVC, animated: true, completion: nil)
         
     }
+    
+    @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
+        loadData()
+        collectionView.reloadData()
+    }
+    
+//    @IBAction func addNewGameButtonTapped(_ sender: UIBarButtonItem) {
+//
+//        let alert = UIAlertController(title: "Пока что новую игру не создать", message: nil, preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//        present(alert, animated: true, completion: nil)
+//
+//    }
     
     
 }
 
-
-//extension GamesMainViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return games.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCollectionViewCell", for: indexPath) as? GameCollectionViewCell {
-//
-//            cell.gameName.text = games[indexPath.item].name
-//            cell.gameImage.image = games[indexPath.item].category.image
-//            cell.gameAddress.text = games[indexPath.item].place.address
-//            cell.gameCount.text = "Забронировано: \(games[indexPath.item].numberOfParticipants) / \(games[indexPath.item].maxNumberOfParticipants)"
-//
-//            cell.setupCell()
-//
-//            return cell
-//        }
-//        return UICollectionViewCell()
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: UIScreen.main.bounds.width - 20, height: 130)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let game = games[indexPath.item]
-//        performSegue(withIdentifier: "toDetailsVC", sender: game)
-//    }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toDetailsVC" {
-//            if let destinationVC = segue.destination as? GamesDetailViewController {
-//                destinationVC.game = sender as? Game
-//            }
-//        }
-//    }
-//
-//}
