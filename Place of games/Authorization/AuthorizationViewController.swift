@@ -13,8 +13,19 @@ class AuthorizationViewController: UIViewController {
     var pass: String?
     
     @IBOutlet weak var loginField: UITextField!
-    
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passField: UITextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setUpElements()
+        
+    }
+    
+    func setUpElements () {
+        errorLabel.alpha = 0
+    }
     
     @IBAction func login(_ sender: UIButton) {
         AuthService.shared.login(login: loginField.text!, password: passField.text!) { error in
@@ -32,23 +43,8 @@ class AuthorizationViewController: UIViewController {
     }
     
     @IBOutlet weak var errorLabel: UILabel!
-    
     @IBOutlet weak var firstTimeLabel: UILabel!
-    
     @IBAction func signUpButton(_ sender: Any) {
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setUpElements()
-
-    }
-    
-    func setUpElements () {
-        
-        errorLabel.alpha = 0
-    }
-
 }

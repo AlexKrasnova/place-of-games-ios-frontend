@@ -8,10 +8,6 @@
 import UIKit
 
 class MainViewController: UITabBarController {
-    static func storyboardIstance() -> MainViewController? {
-        let mainStoryboard = UIStoryboard(name: String(describing: self), bundle: nil)
-        return mainStoryboard.instantiateViewController(withIdentifier: "Main") as? MainViewController
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

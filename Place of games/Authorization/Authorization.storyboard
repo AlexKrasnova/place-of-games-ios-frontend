@@ -102,6 +102,7 @@
                     <connections>
                         <outlet property="errorLabel" destination="pWY-S0-nlF" id="ich-UZ-EIn"/>
                         <outlet property="firstTimeLabel" destination="ueV-vH-8Jo" id="gOF-xZ-t3v"/>
+                        <outlet property="loginButton" destination="dmR-5a-cuO" id="XPu-1f-58O"/>
                         <outlet property="loginField" destination="LId-3Y-8nT" id="bfi-Ci-8ip"/>
                         <outlet property="passField" destination="eBc-eC-bXN" id="NXo-2T-U9U"/>
                     </connections>
@@ -143,7 +144,7 @@
                                     </textField>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boj-hV-tmP">
                                         <rect key="frame" x="0.0" y="240" width="334" height="40"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Q3i-4i-bOJ"/>
                                         </constraints>
@@ -214,6 +215,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

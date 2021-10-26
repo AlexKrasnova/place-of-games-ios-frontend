@@ -25,7 +25,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
 //      делаю кнопку на старте неактивной
         signUpButton.isEnabled = false
-        signUpButton.alpha = 0.5
+        
    
     }
    
@@ -38,8 +38,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     // функция для отображения кнопки, при вводе текста
     func textFieldDidEndEditing(_ textField: UITextField) {
+        if nameTextField.text != "" && loginTextField.text != "" && passTextField.text != "" &&  repeatPassTextField.text != "" && repeatPassTextField.text == passTextField.text {
+            
         signUpButton.isEnabled = true
-        signUpButton.alpha = 1
+        signUpButton.backgroundColor = .systemTeal
+        } else {
+            signUpButton.isEnabled = false
+        }
     }
         
     @IBAction func signUpButton(_ sender: Any) {
@@ -52,29 +57,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 }
             } else {
                 DispatchQueue.main.async {
-                    _ = self.navigationController?.popViewController(animated: true)
+                    self.navigationController?.popViewController(animated: true)
+                    
                     
                 }
-        }
-        
-//        if repeatPassTextField.text == passTextField.text && loginTextField.text != "" && passTextField.text != "" && nameTextField.text != "" && repeatPassTextField.text != "" {
-//
-//            errorLabel.alpha = 1
-//            errorLabel.textColor = .green
-//            errorLabel.text = "Регистрация прошла успешно!"
-//        } else {
-//            print("Ошибка")
-//            errorLabel.alpha = 1
-//        }
-//
-//        if repeatPassTextField.text == passTextField.text {
-//            signUpButton.isHidden = false
-//            signUpButton.isEnabled = true
-//            signUpButton.alpha = 1
-//        } else {
-//            errorLabel.alpha = 1
-//            errorLabel.text = "Пароли не совпадают"
-//        }
+            }
         }
     }
 }
