@@ -26,7 +26,7 @@ class MainViewController: UITabBarController {
             present(viewController, animated: false, completion: nil)
         } else {
             if let gamesNavVC = viewControllers?.first as? UINavigationController,
-               let gamesVC = gamesNavVC.viewControllers.first as? GamesViewController {
+               let gamesVC = gamesNavVC.viewControllers.first as? GamesMainViewController {
                 gamesVC.loadData()
             }
         }

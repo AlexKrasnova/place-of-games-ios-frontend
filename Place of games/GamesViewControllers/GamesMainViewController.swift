@@ -7,42 +7,69 @@
 
 import UIKit
 
-class GamesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class GamesMainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return games.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? GameCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCollectionViewCell", for: indexPath) as? GameCollectionViewCell {
             
-            cell.gameName.text = games[indexPath.row].name
-            cell.gameImage.image = games[indexPath.row].category.image
-            cell.gameAddress.text = games[indexPath.row].place.address
-            cell.gameCount.text = "\(games[indexPath.row].numberOfParticipants) / \(games[indexPath.row].maxNumberOfParticipants)"
+            cell.gameName.text = games[indexPath.item].name
+            cell.gameImage.image = games[indexPath.item].category.image
+            cell.gameAddress.text = games[indexPath.item].place.address
+            cell.gameCount.text = "Забронировано: \(games[indexPath.item].numberOfParticipants) / \(games[indexPath.item].maxNumberOfParticipants)"
             
-            cell.layer.cornerRadius = 20
-            cell.layer.masksToBounds = true
+            cell.setupCell()
             
             return cell
         }
         return UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width - 20, height: 130)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC" {
+            if let destinationVC = segue.destination as? GamesDetailViewController {
+                destinationVC.game = sender as? Game
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let game = games[indexPath.item]
+        performSegue(withIdentifier: "toDetailsVC", sender: game)
+    }
+    
+    
+    
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var games: [Game] = []
     let service = EventService()
+    var newGame: Game?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.register(UINib(nibName: "GameCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GameCollectionViewCell")
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        
+        
         
     }
     
@@ -57,25 +84,27 @@ class GamesViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetailsVC" {
-            if let destinationVC = segue.destination as? DetailViewController {
-                destinationVC.game = sender as? Game
-            }
-        }
-    }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let game = games[indexPath.row]
-        performSegue(withIdentifier: "toDetailsVC", sender: game)
-    }
-    
-    @IBAction func addNewGameButtonTapped(_ sender: UIButton) {
+    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         
-        let alert = UIAlertController(title: "Пока что новую игру не создать", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
+        let destinationVC = UIStoryboard(name: "GamesStoryboard", bundle: nil).instantiateViewController(withIdentifier: "AddNewGameViewController")
+        present(destinationVC, animated: true, completion: nil)
         
     }
+    
+    @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
+        loadData()
+        collectionView.reloadData()
+    }
+    
+//    @IBAction func addNewGameButtonTapped(_ sender: UIBarButtonItem) {
+//
+//        let alert = UIAlertController(title: "Пока что новую игру не создать", message: nil, preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//        present(alert, animated: true, completion: nil)
+//
+//    }
+    
     
 }
+
