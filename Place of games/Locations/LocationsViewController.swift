@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class LocationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class LocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
    @IBOutlet weak var locationTableView: UITableView!
    
@@ -36,5 +36,17 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showLocationsDetails", sender: location[indexPath.row].id)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationVC = segue.destination as? LocationDetailViewController,
+              let locationId = sender as? Int
+        else { return }
+        destinationVC.locationId = locationId
+    }
+    
     
 }

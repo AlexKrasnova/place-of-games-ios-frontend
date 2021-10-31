@@ -28,6 +28,10 @@
 		A9AFF3B1271967B9006089B4 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3B0271967B9006089B4 /* AuthResponse.swift */; };
 		A9AFF3B5271970CE006089B4 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3B4271970CE006089B4 /* ErrorModel.swift */; };
 		A9AFF3B7271B61C8006089B4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3B6271B61C8006089B4 /* MainViewController.swift */; };
+		A9AFF3B9272EB8CA006089B4 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3B8272EB8CA006089B4 /* LocationDetailViewController.swift */; };
+		A9AFF3BB272EBA70006089B4 /* LocationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3BA272EBA70006089B4 /* LocationsService.swift */; };
+		A9AFF3BD272EBD53006089B4 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3BC272EBD53006089B4 /* Place.swift */; };
+		A9AFF3BF272EBE95006089B4 /* WorkingHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3BE272EBE95006089B4 /* WorkingHours.swift */; };
 		E90517E9270DD5B600B11967 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90517E8270DD5B600B11967 /* AppDelegate.swift */; };
 		E90517EB270DD5B600B11967 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90517EA270DD5B600B11967 /* SceneDelegate.swift */; };
 		E90517F0270DD5B600B11967 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90517EE270DD5B600B11967 /* Main.storyboard */; };
@@ -37,7 +41,7 @@
 		F0E5BAE7271606E000F1636A /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5BAE6271606E000F1636A /* AuthorizationViewController.swift */; };
 		F0F63F33270F3D250060EEC3 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F63F32270F3D250060EEC3 /* LocationModel.swift */; };
 		F0F63F37270F3D990060EEC3 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F63F36270F3D980060EEC3 /* LocationTableViewCell.swift */; };
-		F0F63F3A270F3DB30060EEC3 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F63F39270F3DB30060EEC3 /* LocationViewController.swift */; };
+		F0F63F3A270F3DB30060EEC3 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F63F39270F3DB30060EEC3 /* LocationsViewController.swift */; };
 		F0F63F49270F871D0060EEC3 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0F63F48270F871D0060EEC3 /* Location.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +67,10 @@
 		A9AFF3B0271967B9006089B4 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		A9AFF3B4271970CE006089B4 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		A9AFF3B6271B61C8006089B4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A9AFF3B8272EB8CA006089B4 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
+		A9AFF3BA272EBA70006089B4 /* LocationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsService.swift; sourceTree = "<group>"; };
+		A9AFF3BC272EBD53006089B4 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		A9AFF3BE272EBE95006089B4 /* WorkingHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingHours.swift; sourceTree = "<group>"; };
 		E90517E5270DD5B600B11967 /* Place of games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Place of games.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90517E8270DD5B600B11967 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E90517EA270DD5B600B11967 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +82,7 @@
 		F0E5BAE6271606E000F1636A /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		F0F63F32270F3D250060EEC3 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		F0F63F36270F3D980060EEC3 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
-		F0F63F39270F3DB30060EEC3 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		F0F63F39270F3DB30060EEC3 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		F0F63F48270F871D0060EEC3 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +134,7 @@
 			children = (
 				A9AFF3A02713291A006089B4 /* EventService.swift */,
 				A9AFF3A827186266006089B4 /* AuthService.swift */,
+				A9AFF3BA272EBA70006089B4 /* LocationsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -149,6 +158,8 @@
 				A9AFF3AE2719679F006089B4 /* RegisterData.swift */,
 				A9AFF3B0271967B9006089B4 /* AuthResponse.swift */,
 				A9AFF3B4271970CE006089B4 /* ErrorModel.swift */,
+				A9AFF3BC272EBD53006089B4 /* Place.swift */,
+				A9AFF3BE272EBE95006089B4 /* WorkingHours.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,7 +188,7 @@
 				A9AFF3A227132C63006089B4 /* Networking */,
 				A9AFF39F271328D9006089B4 /* Services */,
 				5083761E2710502600F2A815 /* GamesViewControllers */,
-				F0F63F35270F3D480060EEC3 /* LocationViewController */,
+				F0F63F35270F3D480060EEC3 /* Locations */,
 				A90E968E270F2D2C00370583 /* Teams */,
 				E90517E8270DD5B600B11967 /* AppDelegate.swift */,
 				E90517EA270DD5B600B11967 /* SceneDelegate.swift */,
@@ -199,14 +210,15 @@
 			path = Authorization;
 			sourceTree = "<group>";
 		};
-		F0F63F35270F3D480060EEC3 /* LocationViewController */ = {
+		F0F63F35270F3D480060EEC3 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
-				F0F63F39270F3DB30060EEC3 /* LocationViewController.swift */,
+				F0F63F39270F3DB30060EEC3 /* LocationsViewController.swift */,
 				F0F63F36270F3D980060EEC3 /* LocationTableViewCell.swift */,
+				A9AFF3B8272EB8CA006089B4 /* LocationDetailViewController.swift */,
 				F0F63F48270F871D0060EEC3 /* Location.storyboard */,
 			);
-			path = LocationViewController;
+			path = Locations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,13 +303,15 @@
 				F0F63F37270F3D990060EEC3 /* LocationTableViewCell.swift in Sources */,
 				50FF717427254C3400808D99 /* AddNewGameViewController.swift in Sources */,
 				F0E5BAE7271606E000F1636A /* AuthorizationViewController.swift in Sources */,
+				A9AFF3BF272EBE95006089B4 /* WorkingHours.swift in Sources */,
 				A9AFF3AB27186CC3006089B4 /* AuthAPI.swift in Sources */,
 				A9AFF3A427132C8A006089B4 /* API.swift in Sources */,
 				50A270B7272067A5000CEFF3 /* GameCollectionViewCell.swift in Sources */,
-				F0F63F3A270F3DB30060EEC3 /* LocationViewController.swift in Sources */,
+				F0F63F3A270F3DB30060EEC3 /* LocationsViewController.swift in Sources */,
 				A90E9694270F34BC00370583 /* Team.swift in Sources */,
 				A9AFF3A12713291A006089B4 /* EventService.swift in Sources */,
 				A90E9690270F2DC900370583 /* MyTeamsViewController.swift in Sources */,
+				A9AFF3BB272EBA70006089B4 /* LocationsService.swift in Sources */,
 				A90E9692270F2F0400370583 /* MyTeamsTableViewCell.swift in Sources */,
 				5083761D2710501800F2A815 /* Game.swift in Sources */,
 				A9AFF3AF2719679F006089B4 /* RegisterData.swift in Sources */,
@@ -307,7 +321,9 @@
 				E90517EB270DD5B600B11967 /* SceneDelegate.swift in Sources */,
 				508376232710505000F2A815 /* GamesMainViewController.swift in Sources */,
 				A9AFF3B1271967B9006089B4 /* AuthResponse.swift in Sources */,
+				A9AFF3BD272EBD53006089B4 /* Place.swift in Sources */,
 				A9AFF3A927186266006089B4 /* AuthService.swift in Sources */,
+				A9AFF3B9272EB8CA006089B4 /* LocationDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
