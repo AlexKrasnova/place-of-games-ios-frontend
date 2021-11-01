@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V8x-aY-8e1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V8x-aY-8e1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +20,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2RR-Vr-6GS">
                                 <rect key="frame" x="40" y="288" width="334" height="320"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LId-3Y-8nT">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите логин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LId-3Y-8nT">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -69,6 +69,7 @@
                                         <state key="normal" title="Зарегистрироваться"/>
                                         <connections>
                                             <action selector="signUpButton:" destination="YRL-5L-SdQ" eventType="touchUpInside" id="Bj1-97-iwi"/>
+                                            <segue destination="Mf8-7s-9pH" kind="show" id="31S-Co-JMJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -101,6 +102,7 @@
                     <connections>
                         <outlet property="errorLabel" destination="pWY-S0-nlF" id="ich-UZ-EIn"/>
                         <outlet property="firstTimeLabel" destination="ueV-vH-8Jo" id="gOF-xZ-t3v"/>
+                        <outlet property="loginButton" destination="dmR-5a-cuO" id="XPu-1f-58O"/>
                         <outlet property="loginField" destination="LId-3Y-8nT" id="bfi-Ci-8ip"/>
                         <outlet property="passField" destination="eBc-eC-bXN" id="NXo-2T-U9U"/>
                     </connections>
@@ -108,6 +110,100 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KLt-Vh-D6u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="984.05797101449286" y="-44.196428571428569"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="8IO-nO-tqG">
+            <objects>
+                <viewController id="Mf8-7s-9pH" customClass="SignUpViewController" customModule="Place_of_games" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S8t-CT-TWb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8ZG-9W-buW">
+                                <rect key="frame" x="40" y="128" width="334" height="318"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="name" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQn-ee-XSf">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="one-time-code"/>
+                                        <connections>
+                                            <action selector="nameChanged:" destination="Mf8-7s-9pH" eventType="editingChanged" id="Izn-QU-1hl"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="login" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите логин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zfj-CT-8aK">
+                                        <rect key="frame" x="0.0" y="60" width="334" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="one-time-code"/>
+                                        <connections>
+                                            <action selector="loginChanged:" destination="Mf8-7s-9pH" eventType="editingChanged" id="iTv-Gm-8e3"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="pass" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NuU-oc-TfA">
+                                        <rect key="frame" x="0.0" y="120" width="334" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="one-time-code"/>
+                                        <connections>
+                                            <action selector="passChanged:" destination="Mf8-7s-9pH" eventType="editingChanged" id="17U-5a-5P1"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="repeatPass" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Подтвердите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qaC-Vh-JqW">
+                                        <rect key="frame" x="0.0" y="180" width="334" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="one-time-code"/>
+                                        <connections>
+                                            <action selector="repassChanged:" destination="Mf8-7s-9pH" eventType="editingChanged" id="Fza-ff-B1w"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boj-hV-tmP">
+                                        <rect key="frame" x="0.0" y="240" width="334" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Q3i-4i-bOJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Зарегистрироваться">
+                                            <color key="titleColor" systemColor="systemIndigoColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signUpButton:" destination="Mf8-7s-9pH" eventType="touchUpInside" id="vx9-8v-GOR"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы заполнили не все поля." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0D-Sm-TF0">
+                                        <rect key="frame" x="0.0" y="300" width="334" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" systemColor="systemPinkColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="boj-hV-tmP" firstAttribute="height" secondItem="DQn-ee-XSf" secondAttribute="height" id="aia-D0-gyP"/>
+                                    <constraint firstItem="Zfj-CT-8aK" firstAttribute="height" secondItem="DQn-ee-XSf" secondAttribute="height" id="f62-s8-NyY"/>
+                                    <constraint firstItem="NuU-oc-TfA" firstAttribute="height" secondItem="DQn-ee-XSf" secondAttribute="height" id="pK2-vg-bcz"/>
+                                    <constraint firstItem="qaC-Vh-JqW" firstAttribute="height" secondItem="DQn-ee-XSf" secondAttribute="height" id="t7j-fW-M0J"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Igo-sG-2kT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Igo-sG-2kT" firstAttribute="trailing" secondItem="8ZG-9W-buW" secondAttribute="trailing" constant="40" id="1ca-In-NmZ"/>
+                            <constraint firstItem="8ZG-9W-buW" firstAttribute="top" secondItem="Igo-sG-2kT" secondAttribute="top" constant="40" id="jyO-yx-Xea"/>
+                            <constraint firstItem="8ZG-9W-buW" firstAttribute="leading" secondItem="Igo-sG-2kT" secondAttribute="leading" constant="40" id="x7b-ks-z2D"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="m1q-pn-3FE"/>
+                    <connections>
+                        <outlet property="errorLabel" destination="r0D-Sm-TF0" id="kOu-ki-US2"/>
+                        <outlet property="loginTextField" destination="Zfj-CT-8aK" id="MpT-ec-fGx"/>
+                        <outlet property="nameTextField" destination="DQn-ee-XSf" id="Pvs-hA-B6X"/>
+                        <outlet property="passTextField" destination="NuU-oc-TfA" id="f6S-w0-Qi2"/>
+                        <outlet property="repeatPassTextField" destination="qaC-Vh-JqW" id="hGe-0P-g7p"/>
+                        <outlet property="signUpButton" destination="boj-hV-tmP" id="UAL-mR-VXn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v5D-Wu-ntW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1752" y="426"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cAt-uF-ueb">
@@ -132,8 +228,14 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

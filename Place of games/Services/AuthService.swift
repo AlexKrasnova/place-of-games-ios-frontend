@@ -37,8 +37,7 @@ class AuthService {
             guard error == nil else {
                 completion(ErrorModel(message: error!.localizedDescription,
                                       technicalDescription: "local error",
-                                      errorType: "local",
-                                      timestamp: Date()))
+                                      errorType: "local"))
                 return
             }
             let httpResponse = response as! HTTPURLResponse
@@ -60,9 +59,8 @@ class AuthService {
             guard error == nil else {
                 completion(ErrorModel(message: error!.localizedDescription,
                                       technicalDescription: "local error",
-                                      errorType: "local",
-                                      timestamp: Date()))
-                return
+                                      errorType: "local"))
+                 return
             }
             let httpResponse = response as! HTTPURLResponse
             guard httpResponse.statusCode == 201 else {

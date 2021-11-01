@@ -24,6 +24,7 @@ class MainViewController: UITabBarController {
             let viewController = authStoriboard.instantiateInitialViewController()!
             viewController.modalPresentationStyle = .fullScreen
             present(viewController, animated: false, completion: nil)
+            
         } else {
             if let gamesNavVC = viewControllers?.first as? UINavigationController,
                let gamesVC = gamesNavVC.viewControllers.first as? GamesMainViewController {

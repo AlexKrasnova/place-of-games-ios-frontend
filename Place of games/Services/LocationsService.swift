@@ -9,8 +9,17 @@ import Foundation
 
 class LocationsService {
     
-    let session = URLSession(configuration: .default)
+    private let session = URLSession(configuration: .default)
     
+    func getLocations(completion: @escaping ([LocationModel]) -> Void) {
+        let request = LocationAPI.places.asURLRequest()
+        session.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
+            let places = try? JSONDecoder().decode([LocationModel].self, from: data)
+            completion(places ?? [])
+        } .resume()
+    }
+  
     func locationBy(id: Int, completion: @escaping (Place) -> Void) {
         let request = API.getPlace(placeId: id).asUrlRequest()
         session.dataTask(with: request) { data, respons, error in

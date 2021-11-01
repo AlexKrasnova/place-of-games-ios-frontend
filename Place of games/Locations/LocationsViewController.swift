@@ -10,16 +10,20 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     
    @IBOutlet weak var locationTableView: UITableView!
    
-    var location = LocationModel.fetchLocation()
+    private var location = [LocationModel]()
+    private var service = LocationsService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        service.getLocations { (locations) in
+            DispatchQueue.main.async {
+                self.location = locations
+                self.locationTableView.reloadData()
+            }
+        }
         
         locationTableView.delegate = self
         locationTableView.dataSource = self
-
-        
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,7 +36,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         let currentLocation = location[indexPath.row]
         cell.nameOfSport.text = currentLocation.name
         cell.addressLocation.text = currentLocation.address
-        cell.photoLocation.image = currentLocation.photo
+//        cell.photoLocation.image = currentLocation.photo
         
         return cell
     }

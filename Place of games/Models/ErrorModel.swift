@@ -11,7 +11,7 @@ struct ErrorModel: Decodable, LocalizedError {
     let message: String
     let technicalDescription: String
     let errorType: String
-    let timestamp: Date
+    let timestamp = Date()
      
     var errorDescription: String? {
         message
