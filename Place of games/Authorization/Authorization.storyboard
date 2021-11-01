@@ -122,25 +122,37 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8ZG-9W-buW">
                                 <rect key="frame" x="40" y="128" width="334" height="318"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQn-ee-XSf">
+                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="name" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQn-ee-XSf">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="one-time-code"/>
+                                        <connections>
+                                            <action selector="nameChanged:" destination="Mf8-7s-9pH" eventType="editingChanged" id="Izn-QU-1hl"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите логин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zfj-CT-8aK">
+                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="login" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите логин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zfj-CT-8aK">
                                         <rect key="frame" x="0.0" y="60" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="one-time-code"/>
+                                        <connections>
+                                            <action selector="loginChanged:" destination="Mf8-7s-9pH" eventType="editingChanged" id="iTv-Gm-8e3"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NuU-oc-TfA">
+                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="pass" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NuU-oc-TfA">
                                         <rect key="frame" x="0.0" y="120" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="one-time-code"/>
+                                        <connections>
+                                            <action selector="passChanged:" destination="Mf8-7s-9pH" eventType="editingChanged" id="17U-5a-5P1"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Подтвердите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qaC-Vh-JqW">
+                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="repeatPass" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Подтвердите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qaC-Vh-JqW">
                                         <rect key="frame" x="0.0" y="180" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="one-time-code"/>
+                                        <connections>
+                                            <action selector="repassChanged:" destination="Mf8-7s-9pH" eventType="editingChanged" id="Fza-ff-B1w"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boj-hV-tmP">
                                         <rect key="frame" x="0.0" y="240" width="334" height="40"/>

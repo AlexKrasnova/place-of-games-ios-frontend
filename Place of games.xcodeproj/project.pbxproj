@@ -33,6 +33,8 @@
 		E90517F0270DD5B600B11967 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90517EE270DD5B600B11967 /* Main.storyboard */; };
 		E90517F2270DD5B700B11967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90517F1270DD5B700B11967 /* Assets.xcassets */; };
 		E90517F5270DD5B700B11967 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90517F3270DD5B700B11967 /* LaunchScreen.storyboard */; };
+		F036E16C2729A95B00F6A577 /* LocationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036E16B2729A95B00F6A577 /* LocationsService.swift */; };
+		F036E16F2729B7D300F6A577 /* LocationsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036E16E2729B7D300F6A577 /* LocationsAPI.swift */; };
 		F0E5BAE42715FC4D00F1636A /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BAE32715FC4D00F1636A /* Authorization.storyboard */; };
 		F0E5BAE7271606E000F1636A /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5BAE6271606E000F1636A /* AuthorizationViewController.swift */; };
 		F0E5BAEB27198F7F00F1636A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5BAEA27198F7F00F1636A /* SignUpViewController.swift */; };
@@ -71,6 +73,8 @@
 		E90517F1270DD5B700B11967 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E90517F4270DD5B700B11967 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E90517F6270DD5B700B11967 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F036E16B2729A95B00F6A577 /* LocationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsService.swift; sourceTree = "<group>"; };
+		F036E16E2729B7D300F6A577 /* LocationsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsAPI.swift; sourceTree = "<group>"; };
 		F0E5BAE32715FC4D00F1636A /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		F0E5BAE6271606E000F1636A /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		F0E5BAEA27198F7F00F1636A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 			children = (
 				A9AFF3A02713291A006089B4 /* EventService.swift */,
 				A9AFF3A827186266006089B4 /* AuthService.swift */,
+				F036E16B2729A95B00F6A577 /* LocationsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 			children = (
 				A9AFF3A327132C8A006089B4 /* API.swift */,
 				A9AFF3AA27186CC3006089B4 /* AuthAPI.swift */,
+				F036E16E2729B7D300F6A577 /* LocationsAPI.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9AFF3B5271970CE006089B4 /* ErrorModel.swift in Sources */,
+				F036E16F2729B7D300F6A577 /* LocationsAPI.swift in Sources */,
 				A9AFF3B7271B61C8006089B4 /* MainViewController.swift in Sources */,
 				508376242710505000F2A815 /* GamesDetailViewController.swift in Sources */,
 				F0F63F33270F3D250060EEC3 /* LocationModel.swift in Sources */,
@@ -301,6 +308,7 @@
 				A90E9694270F34BC00370583 /* Team.swift in Sources */,
 				A9AFF3A12713291A006089B4 /* EventService.swift in Sources */,
 				A90E9690270F2DC900370583 /* MyTeamsViewController.swift in Sources */,
+				F036E16C2729A95B00F6A577 /* LocationsService.swift in Sources */,
 				A90E9692270F2F0400370583 /* MyTeamsTableViewCell.swift in Sources */,
 				F0E5BAEB27198F7F00F1636A /* SignUpViewController.swift in Sources */,
 				5083761D2710501800F2A815 /* Game.swift in Sources */,

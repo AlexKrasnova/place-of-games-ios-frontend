@@ -38,7 +38,6 @@ class AuthService {
                 completion(ErrorModel(message: error!.localizedDescription,
                                       technicalDescription: "local error",
                                       errorType: "local"))
-//                                      timestamp: Date()))
                 return
             }
             let httpResponse = response as! HTTPURLResponse
@@ -61,7 +60,6 @@ class AuthService {
                 completion(ErrorModel(message: error!.localizedDescription,
                                       technicalDescription: "local error",
                                       errorType: "local"))
-//                                      timestamp: Date()))
                  return
             }
             let httpResponse = response as! HTTPURLResponse

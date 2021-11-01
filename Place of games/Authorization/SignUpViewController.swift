@@ -9,6 +9,7 @@ import UIKit
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
+  
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
@@ -25,7 +26,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
 //      делаю кнопку на старте неактивной
         signUpButton.isEnabled = false
-        
    
     }
    
@@ -36,16 +36,73 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         repeatPassTextField.delegate = self
     }
     
+    
+    @IBAction func nameChanged(_ sender: UITextField) {
+    }
+    @IBAction func loginChanged(_ sender: UITextField) {
+    }
+    @IBAction func passChanged(_ sender: UITextField) {
+    }
+    @IBAction func repassChanged(_ sender: UITextField) {
+    }
+    
+    
     // функция для отображения кнопки, при вводе текста
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if nameTextField.text != "" && loginTextField.text != "" && passTextField.text != "" &&  repeatPassTextField.text != "" && repeatPassTextField.text == passTextField.text {
-            
-        signUpButton.isEnabled = true
-        signUpButton.backgroundColor = .systemTeal
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        if nameTextField.text != "" && loginTextField.text != "" && passTextField.text != "" &&  repeatPassTextField.text != "" && repeatPassTextField.text == passTextField.text {
+//
+//        signUpButton.isEnabled = true
+//        signUpButton.backgroundColor = .systemTeal
+//        } else {
+//            signUpButton.isEnabled = false
+//        }
+//    }
+//
+//
+//        func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//
+//            if nameTextField.text != "" && loginTextField.text != "" && passTextField.text != "" && repeatPassTextField.text != "" && repeatPassTextField.text == passTextField.text {
+//
+////                let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string)
+//
+//                signUpButton.isEnabled = true
+//                signUpButton.backgroundColor = .systemTeal
+//                    } else {
+//                    signUpButton.isEnabled = false
+//                    }
+//            return true
+//        }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        var nameText = self.nameTextField.text
+        var loginText = self.loginTextField.text
+        var passText = self.passTextField.text
+        var repassText = self.repeatPassTextField.text
+
+        switch textField{
+        case self.nameTextField:
+            nameText = string
+        case self.loginTextField:
+            loginText = string
+        case self.passTextField:
+            passText = string
+        case self.repeatPassTextField:
+            repassText = string
+        default:
+            break
+        }
+
+        if nameText != "" && loginText != "" && passText != "" && repassText != "" {
+            self.signUpButton.isEnabled = true
+            signUpButton.backgroundColor = .systemTeal
         } else {
             signUpButton.isEnabled = false
         }
+
+        return true
     }
+    
         
     @IBAction func signUpButton(_ sender: Any) {
         
