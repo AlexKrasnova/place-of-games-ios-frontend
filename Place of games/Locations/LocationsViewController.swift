@@ -10,14 +10,14 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     
    @IBOutlet weak var locationTableView: UITableView!
    
-    private var location = [LocationModel]()
+    private var places = [Place]()
     private var service = LocationsService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         service.getLocations { (locations) in
             DispatchQueue.main.async {
-                self.location = locations
+                self.places = locations
                 self.locationTableView.reloadData()
             }
         }
@@ -27,13 +27,13 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return location.count
+        return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell") as! LocationTableViewCell
         
-        let currentLocation = location[indexPath.row]
+        let currentLocation = places[indexPath.row]
         cell.nameOfSport.text = currentLocation.name
         cell.addressLocation.text = currentLocation.address
 //        cell.photoLocation.image = currentLocation.photo
@@ -42,7 +42,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showLocationsDetails", sender: location[indexPath.row].id)
+        performSegue(withIdentifier: "showLocationsDetails", sender: places[indexPath.row].id)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

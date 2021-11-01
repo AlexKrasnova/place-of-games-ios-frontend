@@ -11,11 +11,11 @@ class LocationsService {
     
     private let session = URLSession(configuration: .default)
     
-    func getLocations(completion: @escaping ([LocationModel]) -> Void) {
+    func getLocations(completion: @escaping ([Place]) -> Void) {
         let request = LocationAPI.places.asURLRequest()
         session.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
-            let places = try? JSONDecoder().decode([LocationModel].self, from: data)
+            let places = try? JSONDecoder().decode([Place].self, from: data)
             completion(places ?? [])
         } .resume()
     }
