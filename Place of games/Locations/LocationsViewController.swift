@@ -6,18 +6,18 @@
 //
 import UIKit
 
-class LocationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class LocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
    @IBOutlet weak var locationTableView: UITableView!
    
-    private var location = [LocationModel]()
+    private var places = [Place]()
     private var service = LocationsService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         service.getLocations { (locations) in
             DispatchQueue.main.async {
-                self.location = locations
+                self.places = locations
                 self.locationTableView.reloadData()
             }
         }
@@ -27,18 +27,30 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return location.count
+        return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell") as! LocationTableViewCell
         
-        let currentLocation = location[indexPath.row]
+        let currentLocation = places[indexPath.row]
         cell.nameOfSport.text = currentLocation.name
         cell.addressLocation.text = currentLocation.address
 //        cell.photoLocation.image = currentLocation.photo
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showLocationsDetails", sender: places[indexPath.row].id)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationVC = segue.destination as? LocationDetailViewController,
+              let locationId = sender as? Int
+        else { return }
+        destinationVC.locationId = locationId
+    }
+    
     
 }

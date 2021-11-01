@@ -10,10 +10,11 @@ import Foundation
 enum API {
     case getEvents
     case postParticipants(eventId: Int)
+    case getPlace(placeId: Int)
     
     var method: String {
         switch self {
-        case .getEvents:
+        case .getEvents, .getPlace:
             return "GET"
         case .postParticipants:
             return "POST"
@@ -30,6 +31,8 @@ enum API {
             return "events"
         case .postParticipants(let eventId):
             return "events/\(eventId)/participants"
+        case .getPlace(let placeId):
+            return "places/\(placeId)"
         }
     }
     
