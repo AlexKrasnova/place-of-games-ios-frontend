@@ -74,30 +74,33 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 //        }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard !string.isEmpty else { return true }
 
-        var nameText = self.nameTextField.text
-        var loginText = self.loginTextField.text
-        var passText = self.passTextField.text
-        var repassText = self.repeatPassTextField.text
+        var nameText = self.nameTextField.text ?? ""
+        var loginText = self.loginTextField.text ?? ""
+        var passText = self.passTextField.text ?? ""
+        var repassText = self.repeatPassTextField.text ?? ""
 
         switch textField{
         case self.nameTextField:
-            nameText = string
+            nameText += string
         case self.loginTextField:
-            loginText = string
+            loginText += string
         case self.passTextField:
-            passText = string
+            passText += string
         case self.repeatPassTextField:
-            repassText = string
+            repassText += string
         default:
             break
         }
 
-        if nameText != "" && loginText != "" && passText != "" && repassText != "" {
+        if nameText != "" && loginText != "" && passText != "" && repassText != "" && passText == repassText {
             self.signUpButton.isEnabled = true
             signUpButton.backgroundColor = .systemTeal
         } else {
             signUpButton.isEnabled = false
+            signUpButton.backgroundColor = .systemGray6
         }
 
         return true
