@@ -31,4 +31,16 @@ class EventService {
             completion()
         }.resume()
     }
+
 }
+
+//func signUp(game: Game, completion: @escaping () -> Void) {
+//    let request = API.postParticipants(eventId: game.id).asUrlRequest()
+//    session.dataTask(with: request) { _, response, error in
+//        guard error == nil else { return }
+//        guard let httpResponse = response as? HTTPURLResponse,
+//              httpResponse.statusCode == 200
+//        else { return }
+//        completion()
+//    }.resume()
+//}
