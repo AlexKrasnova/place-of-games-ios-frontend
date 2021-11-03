@@ -11,6 +11,6 @@ struct Place: Codable {
     let id: Int
     let name: String
     let address: String
-    let description: String
-    let workingHoursList: [WorkingHours]
+    let description: String?
+    let workingHoursList: [WorkingHours]?
 }

@@ -25,7 +25,8 @@ class LocationDetailViewController: UIViewController {
             DispatchQueue.main.async {
                 self.addressLabel.text = place.address
                 self.descriptionLabel.text = place.description
-                place.workingHoursList.forEach { workingHours in
+                guard let workingHoursList = place.workingHoursList else { return }
+                workingHoursList.forEach { workingHours in
                     let label = UILabel()
                     label.text = "\(workingHours.dayOfWeek ?? workingHours.date!) \(workingHours.startTime) - \(workingHours.endTime)"
                     self.scheduleStack.addArrangedSubview(label)
