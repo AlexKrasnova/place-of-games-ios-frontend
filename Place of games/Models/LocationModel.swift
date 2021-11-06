@@ -12,8 +12,11 @@ struct LocationModel: Codable {
     var address: String
 }
 
-    
-
-
-
-
+enum LocationImage: Int {
+    case metalist = 1
+    case kotocafe = 2
+    case luzhniki = 3
+    case chocolate = 4
+    case chocolate2 = 5
+    case bowling = 6
+}
