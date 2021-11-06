@@ -14,10 +14,11 @@ enum API {
     case postEvent(event: Game)
     case getMyEvents
     case getParticipatingEvents
+    case user
     
     var method: String {
         switch self {
-        case .getEvents, .getPlace, .getMyEvents, .getParticipatingEvents:
+        case .getEvents, .getPlace, .getMyEvents, .getParticipatingEvents, .user:
             return "GET"
         case .postParticipants, .postEvent:
             return "POST"
@@ -40,6 +41,8 @@ enum API {
             return "user/owned-events"
         case .getParticipatingEvents:
             return "user/events-to-participate"
+        case .user:
+            return "user"
         }
     }
     

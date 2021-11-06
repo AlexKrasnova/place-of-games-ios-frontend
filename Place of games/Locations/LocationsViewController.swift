@@ -8,16 +8,6 @@ import UIKit
 
 class LocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let locationImages = [
-        1: "metalist",
-        2: "kotocafe",
-        3: "luzhniki",
-        4: "chocolate",
-        5: "chocolate2",
-        6: "bowling"
-        
-    ]
-    
    @IBOutlet weak var locationTableView: UITableView!
    
     private var places = [Place]()
@@ -49,8 +39,8 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.nameOfSport.text = currentLocation.name
         cell.addressLocation.text = currentLocation.address
         cell.photoLocation.image = nil
-        if let imageName = locationImages[currentLocation.id] {
-            cell.photoLocation.image = UIImage(named: imageName)
+        if let imageName = LocationImage(rawValue: currentLocation.id) {
+            cell.photoLocation.image = UIImage(named: "\(imageName)")
         }
         
         return cell

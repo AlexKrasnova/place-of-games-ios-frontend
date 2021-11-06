@@ -75,7 +75,7 @@ class AuthService {
     }
     
     func getUserInfo(completion: @escaping (UserInfoData?, ErrorModel?) -> Void) {
-        let request = AuthAPI.user.asURLRequest()
+        let request = API.user.asUrlRequest()
         self.request(request, successStatusCode: 200) { data, error in
             guard error == nil else { return completion(nil, error) }
             let userInfo = try! JSONDecoder().decode(UserInfoData.self, from: data!)
