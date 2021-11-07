@@ -33,9 +33,5 @@ class LocationDetailViewController: UIViewController {
                 }
             }
         }
-        
     }
-    
-
-
 }

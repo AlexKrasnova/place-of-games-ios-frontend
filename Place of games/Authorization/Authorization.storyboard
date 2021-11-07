@@ -93,8 +93,8 @@
                         <viewLayoutGuide key="safeArea" id="i4E-gR-8M4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2RR-Vr-6GS" firstAttribute="centerY" secondItem="wYs-0r-tTf" secondAttribute="centerY" id="3V9-2e-Cq5"/>
                             <constraint firstItem="2RR-Vr-6GS" firstAttribute="leading" secondItem="i4E-gR-8M4" secondAttribute="leading" constant="40" id="JM0-hk-713"/>
+                            <constraint firstItem="2RR-Vr-6GS" firstAttribute="top" secondItem="i4E-gR-8M4" secondAttribute="top" constant="200" id="O9i-dR-vvp"/>
                             <constraint firstItem="i4E-gR-8M4" firstAttribute="trailing" secondItem="2RR-Vr-6GS" secondAttribute="trailing" constant="40" id="hf3-K1-Eyr"/>
                         </constraints>
                     </view>

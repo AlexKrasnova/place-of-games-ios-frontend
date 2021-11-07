@@ -10,17 +10,19 @@ import Foundation
 enum AuthAPI {
     case token(data: AuthData)
     case register(data: RegisterData)
+    case user
     
     var method: String {
         switch self {
         case .token, .register:
             return "POST"
-        
+        case .user:
+            return "GET"
         }
     }
         
     var baseUrl: String {
-        "http://localhost:8080/api/v1"
+        "http://localhost:8080/api/v1/"
     }
     
     var path: String {
@@ -29,6 +31,8 @@ enum AuthAPI {
             return "tokens"
         case .register:
             return "users"
+        case .user:
+            return "user"
         }
     }
     
@@ -44,6 +48,10 @@ enum AuthAPI {
             httpBody = try! JSONEncoder().encode(data)
         case .register(let data):
             httpBody = try! JSONEncoder().encode(data)
+        case .user:
+            if let token = AuthService.shared.token {
+                request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            }
         }
         
         if let httpBody = httpBody {
