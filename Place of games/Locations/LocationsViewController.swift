@@ -8,10 +8,21 @@ import UIKit
 
 class LocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let locationImages = [
+        1: "metalist",
+        2: "kotocafe",
+        3: "luzhniki",
+        4: "chocolate",
+        5: "chocolate2",
+        6: "bowling"
+        
+    ]
+    
    @IBOutlet weak var locationTableView: UITableView!
    
     private var places = [Place]()
     private var service = LocationsService()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +45,17 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell") as! LocationTableViewCell
         
         let currentLocation = places[indexPath.row]
+        cell.setupCell()
         cell.nameOfSport.text = currentLocation.name
         cell.addressLocation.text = currentLocation.address
-//        cell.photoLocation.image = currentLocation.photo
+        cell.photoLocation.image = nil
+        if let imageName = locationImages[currentLocation.id] {
+            cell.photoLocation.image = UIImage(named: imageName)
+        }
         
         return cell
     }
-    
+   
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showLocationsDetails", sender: places[indexPath.row].id)
     }

@@ -45,5 +45,31 @@ class EventService {
         }.resume()
     }
 
+    func getMyEvents(completion: @escaping () -> Void) {
+        let request = API.getMyEvents.asUrlRequest()
+        session.dataTask(with: request) { data, response, error in
+            guard error == nil else { return }
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200
+            else { return }
+            //TODO: complete after saving new and participating events
+//            let events = try! JSONDecoder().decode([Game], from: data!)
+            completion()
+        }.resume()
+    }
+    
+    
+    
+//    func getParticipatingEvents(completion: @escaping () -> Void) {
+//        let request = API.postParticipants(eventId: game.id).asUrlRequest()
+//        session.dataTask(with: request) { _, response, error in
+//            guard error == nil else { return }
+//            guard let httpResponse = response as? HTTPURLResponse,
+//                  httpResponse.statusCode == 200
+//            else { return }
+//            completion()
+//        }.resume()
+//    }
+
 }
 

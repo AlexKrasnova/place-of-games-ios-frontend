@@ -47,15 +47,12 @@
 		E90517F2270DD5B700B11967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90517F1270DD5B700B11967 /* Assets.xcassets */; };
 		E90517F5270DD5B700B11967 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90517F3270DD5B700B11967 /* LaunchScreen.storyboard */; };
 		F036E16F2729B7D300F6A577 /* LocationsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036E16E2729B7D300F6A577 /* LocationsAPI.swift */; };
-		F04D1251274138BA0067D210 /* ProfileTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1250274138BA0067D210 /* ProfileTableView.swift */; };
-		F04D1260274138EF0067D210 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1258274138EF0067D210 /* ProfileCell.swift */; };
-		F04D1261274138EF0067D210 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1259274138EF0067D210 /* ProfileVC.swift */; };
-		F04D1262274138EF0067D210 /* ProfileVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D125A274138EF0067D210 /* ProfileVC2.swift */; };
-		F04D1263274138EF0067D210 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04D125B274138EF0067D210 /* Profile.storyboard */; };
-		F04D1264274138EF0067D210 /* ProfileVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D125C274138EF0067D210 /* ProfileVC3.swift */; };
-		F04D1265274138EF0067D210 /* ExpandableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D125D274138EF0067D210 /* ExpandableHeaderView.swift */; };
-		F04D1266274138EF0067D210 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D125E274138EF0067D210 /* ProfileViewController.swift */; };
-		F04D1267274138EF0067D210 /* ProfileCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D125F274138EF0067D210 /* ProfileCell3.swift */; };
+		F058255D2737F589002A61A5 /* UserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058255C2737F589002A61A5 /* UserInfoData.swift */; };
+		F0715B55273436FF00D58EA3 /* ExpandableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0715B54273436FF00D58EA3 /* ExpandableHeaderView.swift */; };
+		F0715B5B2734509200D58EA3 /* ProfileVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0715B5A2734509200D58EA3 /* ProfileVC3.swift */; };
+		F0715B5E273453A600D58EA3 /* ProfileCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0715B5D273453A600D58EA3 /* ProfileCell3.swift */; };
+		F0AA2AA727319E3900E24F43 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0AA2AA627319E3900E24F43 /* Profile.storyboard */; };
+		F0AA2AB72734057700E24F43 /* ProfileTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA2AB62734057700E24F43 /* ProfileTableView.swift */; };
 		F0E5BAE42715FC4D00F1636A /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BAE32715FC4D00F1636A /* Authorization.storyboard */; };
 		F0E5BAE7271606E000F1636A /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5BAE6271606E000F1636A /* AuthorizationViewController.swift */; };
 		F0E5BAEB27198F7F00F1636A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5BAEA27198F7F00F1636A /* SignUpViewController.swift */; };
@@ -108,15 +105,12 @@
 		E90517F4270DD5B700B11967 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E90517F6270DD5B700B11967 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F036E16E2729B7D300F6A577 /* LocationsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsAPI.swift; sourceTree = "<group>"; };
-		F04D1250274138BA0067D210 /* ProfileTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableView.swift; sourceTree = "<group>"; };
-		F04D1258274138EF0067D210 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
-		F04D1259274138EF0067D210 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		F04D125A274138EF0067D210 /* ProfileVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC2.swift; sourceTree = "<group>"; };
-		F04D125B274138EF0067D210 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		F04D125C274138EF0067D210 /* ProfileVC3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC3.swift; sourceTree = "<group>"; };
-		F04D125D274138EF0067D210 /* ExpandableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableHeaderView.swift; sourceTree = "<group>"; };
-		F04D125E274138EF0067D210 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		F04D125F274138EF0067D210 /* ProfileCell3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell3.swift; sourceTree = "<group>"; };
+		F058255C2737F589002A61A5 /* UserInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoData.swift; sourceTree = "<group>"; };
+		F0715B54273436FF00D58EA3 /* ExpandableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableHeaderView.swift; sourceTree = "<group>"; };
+		F0715B5A2734509200D58EA3 /* ProfileVC3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC3.swift; sourceTree = "<group>"; };
+		F0715B5D273453A600D58EA3 /* ProfileCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell3.swift; sourceTree = "<group>"; };
+		F0AA2AA627319E3900E24F43 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		F0AA2AB62734057700E24F43 /* ProfileTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableView.swift; sourceTree = "<group>"; };
 		F0E5BAE32715FC4D00F1636A /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		F0E5BAE6271606E000F1636A /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		F0E5BAEA27198F7F00F1636A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -214,7 +208,8 @@
 				A95DC6712738071200817BA5 /* PlaceFreeTime.swift */,
 				A9670830273EA592006C4052 /* ScheduleTimeSlot.swift */,
 				A9670832273EA83B006C4052 /* DayOfWeek.swift */,
-				F04D1250274138BA0067D210 /* ProfileTableView.swift */,
+				F0AA2AB62734057700E24F43 /* ProfileTableView.swift */,
+				F058255C2737F589002A61A5 /* UserInfoData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,14 +256,10 @@
 		F04D1257274138EF0067D210 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				F04D1258274138EF0067D210 /* ProfileCell.swift */,
-				F04D1259274138EF0067D210 /* ProfileVC.swift */,
-				F04D125A274138EF0067D210 /* ProfileVC2.swift */,
-				F04D125B274138EF0067D210 /* Profile.storyboard */,
-				F04D125C274138EF0067D210 /* ProfileVC3.swift */,
-				F04D125D274138EF0067D210 /* ExpandableHeaderView.swift */,
-				F04D125E274138EF0067D210 /* ProfileViewController.swift */,
-				F04D125F274138EF0067D210 /* ProfileCell3.swift */,
+				F0AA2AA627319E3900E24F43 /* Profile.storyboard */,
+				F0715B54273436FF00D58EA3 /* ExpandableHeaderView.swift */,
+				F0715B5A2734509200D58EA3 /* ProfileVC3.swift */,
+				F0715B5D273453A600D58EA3 /* ProfileCell3.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -392,13 +383,14 @@
 				F04D1264274138EF0067D210 /* ProfileVC3.swift in Sources */,
 				F04D1262274138EF0067D210 /* ProfileVC2.swift in Sources */,
 				A90E9694270F34BC00370583 /* Team.swift in Sources */,
-				F04D1267274138EF0067D210 /* ProfileCell3.swift in Sources */,
 				A9AFF3A12713291A006089B4 /* EventService.swift in Sources */,
 				A9AFF3C12736D55A006089B4 /* LocationScheduleViewController.swift in Sources */,
 				A90E9690270F2DC900370583 /* MyTeamsViewController.swift in Sources */,
 				A9AFF3BB272EBA70006089B4 /* LocationsService.swift in Sources */,
 				A90E9692270F2F0400370583 /* MyTeamsTableViewCell.swift in Sources */,
 				A95DC6722738071200817BA5 /* PlaceFreeTime.swift in Sources */,
+				F058255D2737F589002A61A5 /* UserInfoData.swift in Sources */,
+				F0715B55273436FF00D58EA3 /* ExpandableHeaderView.swift in Sources */,
 				F0E5BAEB27198F7F00F1636A /* SignUpViewController.swift in Sources */,
 				A9670833273EA83B006C4052 /* DayOfWeek.swift in Sources */,
 				5083761D2710501800F2A815 /* Game.swift in Sources */,
