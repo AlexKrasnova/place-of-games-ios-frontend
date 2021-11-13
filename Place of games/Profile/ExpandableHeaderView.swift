@@ -7,12 +7,12 @@
 
 import UIKit
 
-protocol ExpandableHeaderViewDelegate {
+protocol ExpandableHeaderViewDelegate: AnyObject {
     func toggleSection(header: ExpandableHeaderView, section: Int)
 }
 
 class ExpandableHeaderView: UITableViewHeaderFooterView {
-    var delegate: ExpandableHeaderViewDelegate?
+    weak var delegate: ExpandableHeaderViewDelegate?
     var section: Int!
     
     override init(reuseIdentifier: String?) {

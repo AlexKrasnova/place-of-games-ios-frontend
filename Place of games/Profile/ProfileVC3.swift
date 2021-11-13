@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileVC3: UIViewController {
+class ProfileVC3: UIViewController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate {
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -29,12 +29,8 @@ class ProfileVC3: UIViewController {
         sections.append(Profile.init(genre: "⚽️ Мои игры", row: ["Игра1", "Игра2"], expanded: false))
         sections.append(Profile.init(genre: "📅 Запланированные мероприятия", row: ["Мероприятие1", "Мероприятие2", "Мероприятие3"], expanded: false))
     }
-}
-
-extension ProfileVC3: UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate {
-    
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        func numberOfSections(in tableView: UITableView) -> Int {
             return sections.count
         }
 
@@ -42,7 +38,7 @@ extension ProfileVC3: UITableViewDataSource, UITableViewDelegate, ExpandableHead
             return sections[section].row!.count
         }
 
-    internal func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
             return 44
         }
 
@@ -54,11 +50,11 @@ extension ProfileVC3: UITableViewDataSource, UITableViewDelegate, ExpandableHead
             }
         }
 
-    internal func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
             return 2
         }
 
-    internal func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
             let header = ExpandableHeaderView()
             header.customInit(title: sections[section].genre!, section: section, delegate: self)
             return header
@@ -79,3 +75,4 @@ extension ProfileVC3: UITableViewDataSource, UITableViewDelegate, ExpandableHead
             tableView.endUpdates()
         }
     }
+
