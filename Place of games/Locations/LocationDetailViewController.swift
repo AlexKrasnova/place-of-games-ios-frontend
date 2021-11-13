@@ -32,7 +32,7 @@ class LocationDetailViewController: UIViewController {
                 guard let workingHoursList = place.workingHoursList else { return }
                 workingHoursList.forEach { workingHours in
                     let label = UILabel()
-                    label.text = "\(workingHours.dayOfWeek ?? workingHours.date!) \(workingHours.startTime) - \(workingHours.endTime)"
+                    label.text = "\(workingHours.dayOfWeek?.rawValue ?? workingHours.date!.string(format: "d MMMM yyyy")) \(workingHours.startTime.string(format: "HH:mm")) - \(workingHours.endTime.string(format: "HH:mm"))"
                     self.scheduleStack.addArrangedSubview(label)
                 }
             }

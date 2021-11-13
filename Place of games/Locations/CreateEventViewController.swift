@@ -12,14 +12,16 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var placeAddressLabel: UILabel!
     @IBOutlet weak var eventNameTextField: UITextField!
-    @IBOutlet weak var startTimePicker: UIDatePicker!
-    @IBOutlet weak var durationTextField: UITextField!
+    @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
+    
     @IBOutlet weak var numberOfParticipantsTextFields: UITextField!
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     
     var place: Place!
-    var selectedFreeTime: PlaceFreeTime!
+    var startTime: Date!
+    var duration: Int!
     
     var selectedCategory: Category?
     let service = EventService()
@@ -30,9 +32,8 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
 
         placeNameLabel.text = place.name
         placeAddressLabel.text = place.address
-        startTimePicker.minimumDate = selectedFreeTime.startTime
-        startTimePicker.maximumDate = selectedFreeTime.endTime
-        startTimePicker.date = selectedFreeTime.startTime
+        startTimeLabel.text = startTime.string(format: "d MMMM HH:mm")
+        durationLabel.text = "\(duration!) мин."
         let picker = UIPickerView()
         picker.dataSource = self
         picker.delegate = self
@@ -46,8 +47,8 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBAction func createEvent() {
         let newEvent = Game(id: 0,
                             name: eventNameTextField.text!,
-                            time: startTimePicker.date,
-                            duration: Int(durationTextField.text!) ?? 0,
+                            time: startTime,
+                            duration: duration,
                             place: place,
                             maxNumberOfParticipants: Int(numberOfParticipantsTextFields.text!) ?? 0,
                             numberOfParticipants: 0,

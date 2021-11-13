@@ -18,11 +18,14 @@
 		A90E9690270F2DC900370583 /* MyTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E968F270F2DC900370583 /* MyTeamsViewController.swift */; };
 		A90E9692270F2F0400370583 /* MyTeamsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E9691270F2F0400370583 /* MyTeamsTableViewCell.swift */; };
 		A90E9694270F34BC00370583 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E9693270F34BC00370583 /* Team.swift */; };
-		A95DC6702736D86C00817BA5 /* LocationScheduleEmptyCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95DC66F2736D86C00817BA5 /* LocationScheduleEmptyCellTableViewCell.swift */; };
+		A95DC6702736D86C00817BA5 /* LocationScheduleSlotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95DC66F2736D86C00817BA5 /* LocationScheduleSlotTableViewCell.swift */; };
 		A95DC6722738071200817BA5 /* PlaceFreeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95DC6712738071200817BA5 /* PlaceFreeTime.swift */; };
 		A95DC67527380D5400817BA5 /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95DC67427380D5400817BA5 /* Date+Format.swift */; };
 		A95DC677273811CB00817BA5 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95DC676273811CB00817BA5 /* DateFormatter+Extension.swift */; };
 		A95DC679273926E700817BA5 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95DC678273926E700817BA5 /* CreateEventViewController.swift */; };
+		A9670831273EA592006C4052 /* ScheduleTimeSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9670830273EA592006C4052 /* ScheduleTimeSlot.swift */; };
+		A9670833273EA83B006C4052 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9670832273EA83B006C4052 /* DayOfWeek.swift */; };
+		A9670835273EAFA7006C4052 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9670834273EAFA7006C4052 /* String+Date.swift */; };
 		A9AFF3A12713291A006089B4 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3A02713291A006089B4 /* EventService.swift */; };
 		A9AFF3A427132C8A006089B4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3A327132C8A006089B4 /* API.swift */; };
 		A9AFF3A72715C394006089B4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3A62715C394006089B4 /* Category.swift */; };
@@ -65,11 +68,14 @@
 		A90E968F270F2DC900370583 /* MyTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamsViewController.swift; sourceTree = "<group>"; };
 		A90E9691270F2F0400370583 /* MyTeamsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamsTableViewCell.swift; sourceTree = "<group>"; };
 		A90E9693270F34BC00370583 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		A95DC66F2736D86C00817BA5 /* LocationScheduleEmptyCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScheduleEmptyCellTableViewCell.swift; sourceTree = "<group>"; };
+		A95DC66F2736D86C00817BA5 /* LocationScheduleSlotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScheduleSlotTableViewCell.swift; sourceTree = "<group>"; };
 		A95DC6712738071200817BA5 /* PlaceFreeTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceFreeTime.swift; sourceTree = "<group>"; };
 		A95DC67427380D5400817BA5 /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		A95DC676273811CB00817BA5 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		A95DC678273926E700817BA5 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
+		A9670830273EA592006C4052 /* ScheduleTimeSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTimeSlot.swift; sourceTree = "<group>"; };
+		A9670832273EA83B006C4052 /* DayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
+		A9670834273EAFA7006C4052 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		A9AFF3A02713291A006089B4 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		A9AFF3A327132C8A006089B4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A9AFF3A62715C394006089B4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 			children = (
 				A95DC67427380D5400817BA5 /* Date+Format.swift */,
 				A95DC676273811CB00817BA5 /* DateFormatter+Extension.swift */,
+				A9670834273EAFA7006C4052 /* String+Date.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -187,6 +194,8 @@
 				A9AFF3BC272EBD53006089B4 /* Place.swift */,
 				A9AFF3BE272EBE95006089B4 /* WorkingHours.swift */,
 				A95DC6712738071200817BA5 /* PlaceFreeTime.swift */,
+				A9670830273EA592006C4052 /* ScheduleTimeSlot.swift */,
+				A9670832273EA83B006C4052 /* DayOfWeek.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -247,7 +256,7 @@
 				A9AFF3B8272EB8CA006089B4 /* LocationDetailViewController.swift */,
 				F0F63F48270F871D0060EEC3 /* Location.storyboard */,
 				A9AFF3C02736D55A006089B4 /* LocationScheduleViewController.swift */,
-				A95DC66F2736D86C00817BA5 /* LocationScheduleEmptyCellTableViewCell.swift */,
+				A95DC66F2736D86C00817BA5 /* LocationScheduleSlotTableViewCell.swift */,
 				A95DC678273926E700817BA5 /* CreateEventViewController.swift */,
 			);
 			path = Locations;
@@ -342,6 +351,7 @@
 				A9AFF3A427132C8A006089B4 /* API.swift in Sources */,
 				50A270B7272067A5000CEFF3 /* GameCollectionViewCell.swift in Sources */,
 				F0F63F3A270F3DB30060EEC3 /* LocationsViewController.swift in Sources */,
+				A9670831273EA592006C4052 /* ScheduleTimeSlot.swift in Sources */,
 				A90E9694270F34BC00370583 /* Team.swift in Sources */,
 				A9AFF3A12713291A006089B4 /* EventService.swift in Sources */,
 				A9AFF3C12736D55A006089B4 /* LocationScheduleViewController.swift in Sources */,
@@ -350,10 +360,12 @@
 				A90E9692270F2F0400370583 /* MyTeamsTableViewCell.swift in Sources */,
 				A95DC6722738071200817BA5 /* PlaceFreeTime.swift in Sources */,
 				F0E5BAEB27198F7F00F1636A /* SignUpViewController.swift in Sources */,
+				A9670833273EA83B006C4052 /* DayOfWeek.swift in Sources */,
 				5083761D2710501800F2A815 /* Game.swift in Sources */,
 				A9AFF3AF2719679F006089B4 /* RegisterData.swift in Sources */,
 				A9AFF3A72715C394006089B4 /* Category.swift in Sources */,
 				A9AFF3AD271966F0006089B4 /* AuthData.swift in Sources */,
+				A9670835273EAFA7006C4052 /* String+Date.swift in Sources */,
 				E90517E9270DD5B600B11967 /* AppDelegate.swift in Sources */,
 				E90517EB270DD5B600B11967 /* SceneDelegate.swift in Sources */,
 				508376232710505000F2A815 /* GamesMainViewController.swift in Sources */,
@@ -362,7 +374,7 @@
 				A9AFF3BD272EBD53006089B4 /* Place.swift in Sources */,
 				A9AFF3A927186266006089B4 /* AuthService.swift in Sources */,
 				A9AFF3B9272EB8CA006089B4 /* LocationDetailViewController.swift in Sources */,
-				A95DC6702736D86C00817BA5 /* LocationScheduleEmptyCellTableViewCell.swift in Sources */,
+				A95DC6702736D86C00817BA5 /* LocationScheduleSlotTableViewCell.swift in Sources */,
 				A95DC679273926E700817BA5 /* CreateEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
