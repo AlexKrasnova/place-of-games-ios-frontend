@@ -12,15 +12,19 @@
         <!--Locations View Controller-->
         <scene sceneID="ogf-Yd-xq8">
             <objects>
-                <viewController id="gKj-l1-efF" customClass="LocationsViewController" customModule="Place_of_games" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationsViewController" id="gKj-l1-efF" customClass="LocationsViewController" customModule="Place_of_games" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mpf-pb-BnI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="LocationTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XTh-ZA-y6w">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="LocationTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XTh-ZA-y6w">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="srr-Gg-8ck">
+                                    <rect key="frame" x="0.0" y="149.00000034679067" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="100" id="YUq-OZ-Dlx" customClass="LocationTableViewCell" customModule="Place_of_games" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="100"/>
@@ -70,6 +74,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aZh-Us-2Dj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aZh-Us-2Dj" firstAttribute="bottom" secondItem="XTh-ZA-y6w" secondAttribute="bottom" id="8ig-JM-7uu"/>
+                            <constraint firstItem="XTh-ZA-y6w" firstAttribute="top" secondItem="Mpf-pb-BnI" secondAttribute="top" id="SGy-G9-Jhu"/>
+                            <constraint firstItem="XTh-ZA-y6w" firstAttribute="trailing" secondItem="aZh-Us-2Dj" secondAttribute="trailing" id="hk0-ko-rDl"/>
+                            <constraint firstItem="XTh-ZA-y6w" firstAttribute="leading" secondItem="aZh-Us-2Dj" secondAttribute="leading" id="u1B-KA-bVe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="11s-0S-r0p">
                         <barButtonItem key="backBarButtonItem" title="  " id="Idu-aL-afo"/>
@@ -89,29 +99,29 @@
             <objects>
                 <viewController id="haH-GZ-Ejd" customClass="LocationDetailViewController" customModule="Place_of_games" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="grQ-KN-A1e">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i7b-Ho-l6S">
-                                <rect key="frame" x="0.0" y="96" width="414" height="233"/>
+                                <rect key="frame" x="0.0" y="8" width="414" height="233"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="i7b-Ho-l6S" secondAttribute="height" multiplier="16:9" id="Mn0-UG-xKa"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYS-bB-n5a">
-                                <rect key="frame" x="16" y="337" width="382" height="20.5"/>
+                                <rect key="frame" x="16" y="249" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAA-O3-fM9">
-                                <rect key="frame" x="16" y="365.5" width="382" height="20.5"/>
+                                <rect key="frame" x="16" y="277.5" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время работы" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XJ-7z-Cb4">
-                                <rect key="frame" x="16" y="418" width="382" height="21"/>
+                                <rect key="frame" x="16" y="330" width="382" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -164,11 +174,11 @@
             <objects>
                 <viewController id="T6C-ll-x7w" customClass="LocationScheduleViewController" customModule="Place_of_games" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Aa-GS-0yB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaU-tm-lxc">
-                                <rect key="frame" x="16" y="104" width="50" height="50"/>
+                                <rect key="frame" x="16" y="16" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="0e3-Lx-Hhv"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="GTc-D3-64a"/>
@@ -178,7 +188,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="NgA-my-oQb">
-                                <rect key="frame" x="247" y="104" width="155" height="50"/>
+                                <rect key="frame" x="247" y="16" width="155" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="s9t-Jj-9OB"/>
                                 </constraints>
@@ -188,7 +198,7 @@
                                 </connections>
                             </datePicker>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6r6-10-ibS">
-                                <rect key="frame" x="0.0" y="191" width="414" height="536.5"/>
+                                <rect key="frame" x="0.0" y="103" width="414" height="536.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="epJ-zq-riB">
                                     <rect key="frame" x="0.0" y="101.00000034679067" width="414" height="44"/>
@@ -242,13 +252,13 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите интервал для события:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcj-HQ-pI7">
-                                <rect key="frame" x="16" y="162" width="382" height="21"/>
+                                <rect key="frame" x="16" y="74" width="382" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbC-EW-WZ5">
-                                <rect key="frame" x="122.5" y="764" width="169" height="41"/>
+                                <rect key="frame" x="122.5" y="676" width="169" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Забронировать"/>
                                 <state key="disabled">
@@ -259,7 +269,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выбрано:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb8-es-oxd">
-                                <rect key="frame" x="16" y="735.5" width="382" height="20.5"/>
+                                <rect key="frame" x="16" y="647.5" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -306,11 +316,11 @@
             <objects>
                 <viewController id="KrG-ft-nRd" customClass="CreateEventViewController" customModule="Place_of_games" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Luy-bk-zkF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="3Ir-2m-m7h">
-                                <rect key="frame" x="16" y="100" width="382" height="252.5"/>
+                                <rect key="frame" x="16" y="12" width="382" height="252.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WT1-1U-0ca">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="23"/>
@@ -413,7 +423,7 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mmQ-QX-CKy">
-                                <rect key="frame" x="16" y="397" width="382" height="130"/>
+                                <rect key="frame" x="16" y="309" width="382" height="130"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="XNd-tE-lbI"/>
@@ -423,13 +433,13 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPZ-XG-8kw">
-                                <rect key="frame" x="16" y="368.5" width="382" height="20.5"/>
+                                <rect key="frame" x="16" y="280.5" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JD-td-dGs">
-                                <rect key="frame" x="170" y="551" width="74" height="35"/>
+                                <rect key="frame" x="170" y="463" width="74" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Создать"/>
                                 <connections>
@@ -475,7 +485,7 @@
                 <navigationController storyboardIdentifier="LocationNavigationController" id="Kvn-ey-Xtc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Площадки" image="icon-locations" id="ief-6I-dYw"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nbw-Nt-Csd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Nbw-Nt-Csd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

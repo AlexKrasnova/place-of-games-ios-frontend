@@ -40,6 +40,9 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
                 destinationVC.game = sender as? Game
             }
         }
+        if let destibationVC = segue.destination as? LocationsViewController {
+            destibationVC.title = "Выбор места"
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -63,14 +66,13 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "GameCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GameCollectionViewCell")
+        loadData()
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       
-        
-        
+  
     }
     
     func loadData() {
@@ -96,15 +98,6 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
         loadData()
         collectionView.reloadData()
     }
-    
-//    @IBAction func addNewGameButtonTapped(_ sender: UIBarButtonItem) {
-//
-//        let alert = UIAlertController(title: "Пока что новую игру не создать", message: nil, preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//        present(alert, animated: true, completion: nil)
-//
-//    }
-    
-    
+
 }
 
