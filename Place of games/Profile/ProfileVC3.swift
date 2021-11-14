@@ -7,6 +7,9 @@
 
 import UIKit
 
+var needUpdateMyGames = true
+var needUpdateMyEvents = true
+
 class ProfileVC3: UIViewController {
 
     @IBOutlet weak var profileImageView: UIImageView!
@@ -14,8 +17,12 @@ class ProfileVC3: UIViewController {
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+    }
     
     var sections = [Profile]()
+    let eventService = EventService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +33,45 @@ class ProfileVC3: UIViewController {
             self.loginLabel.text = userInfo.login
             self.nameLabel.text = userInfo.name
         }
-        sections.append(Profile.init(genre: "⚽️ Мои игры", row: ["Игра1", "Игра2"], expanded: false))
-        sections.append(Profile.init(genre: "📅 Запланированные мероприятия", row: ["Мероприятие1", "Мероприятие2", "Мероприятие3"], expanded: false))
+        
+        sections.append(Profile.init(genre: "⚽️ Мои игры", row: [], expanded: false))
+        sections.append(Profile.init(genre: "📅 Запланированные мероприятия", row: [], expanded: false))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if needUpdateMyEvents {
+            updateMyEvents()
+        }
+        if needUpdateMyGames {
+            updateMyGames()
+        }
+        super.viewWillAppear(animated)
+    }
+    
+    func updateMyGames() {
+        needUpdateMyGames = false
+        eventService.getMyEvents { games in
+            let gameNames = games.map { (game) -> String in
+                return game.name
+            }
+            self.sections[0].row = gameNames
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func updateMyEvents() {
+        needUpdateMyEvents = false
+        eventService.getMyEvents { games in
+            let gameNames = games.map { (game) -> String in
+                return game.name
+            }
+            self.sections[1].row = gameNames
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 

@@ -47,12 +47,12 @@
 		E90517F2270DD5B700B11967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90517F1270DD5B700B11967 /* Assets.xcassets */; };
 		E90517F5270DD5B700B11967 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90517F3270DD5B700B11967 /* LaunchScreen.storyboard */; };
 		F036E16F2729B7D300F6A577 /* LocationsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036E16E2729B7D300F6A577 /* LocationsAPI.swift */; };
+		F04D126C27413EB80067D210 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04D126B27413EB80067D210 /* Profile.storyboard */; };
+		F04D12712741400D0067D210 /* ProfileVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0715B5A2734509200D58EA3 /* ProfileVC3.swift */; };
+		F04D12732741402C0067D210 /* ProfileCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0715B5D273453A600D58EA3 /* ProfileCell3.swift */; };
+		F04D1275274140520067D210 /* ProfileTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA2AB62734057700E24F43 /* ProfileTableView.swift */; };
 		F058255D2737F589002A61A5 /* UserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058255C2737F589002A61A5 /* UserInfoData.swift */; };
 		F0715B55273436FF00D58EA3 /* ExpandableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0715B54273436FF00D58EA3 /* ExpandableHeaderView.swift */; };
-		F0715B5B2734509200D58EA3 /* ProfileVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0715B5A2734509200D58EA3 /* ProfileVC3.swift */; };
-		F0715B5E273453A600D58EA3 /* ProfileCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0715B5D273453A600D58EA3 /* ProfileCell3.swift */; };
-		F0AA2AA727319E3900E24F43 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0AA2AA627319E3900E24F43 /* Profile.storyboard */; };
-		F0AA2AB72734057700E24F43 /* ProfileTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA2AB62734057700E24F43 /* ProfileTableView.swift */; };
 		F0E5BAE42715FC4D00F1636A /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BAE32715FC4D00F1636A /* Authorization.storyboard */; };
 		F0E5BAE7271606E000F1636A /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5BAE6271606E000F1636A /* AuthorizationViewController.swift */; };
 		F0E5BAEB27198F7F00F1636A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5BAEA27198F7F00F1636A /* SignUpViewController.swift */; };
@@ -105,11 +105,11 @@
 		E90517F4270DD5B700B11967 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E90517F6270DD5B700B11967 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F036E16E2729B7D300F6A577 /* LocationsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsAPI.swift; sourceTree = "<group>"; };
+		F04D126B27413EB80067D210 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		F058255C2737F589002A61A5 /* UserInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoData.swift; sourceTree = "<group>"; };
 		F0715B54273436FF00D58EA3 /* ExpandableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableHeaderView.swift; sourceTree = "<group>"; };
 		F0715B5A2734509200D58EA3 /* ProfileVC3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC3.swift; sourceTree = "<group>"; };
 		F0715B5D273453A600D58EA3 /* ProfileCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell3.swift; sourceTree = "<group>"; };
-		F0AA2AA627319E3900E24F43 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		F0AA2AB62734057700E24F43 /* ProfileTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableView.swift; sourceTree = "<group>"; };
 		F0E5BAE32715FC4D00F1636A /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		F0E5BAE6271606E000F1636A /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 		F04D1257274138EF0067D210 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				F0AA2AA627319E3900E24F43 /* Profile.storyboard */,
+				F04D126B27413EB80067D210 /* Profile.storyboard */,
 				F0715B54273436FF00D58EA3 /* ExpandableHeaderView.swift */,
 				F0715B5A2734509200D58EA3 /* ProfileVC3.swift */,
 				F0715B5D273453A600D58EA3 /* ProfileCell3.swift */,
@@ -351,7 +351,7 @@
 				E90517F2270DD5B700B11967 /* Assets.xcassets in Resources */,
 				50A270B8272067A5000CEFF3 /* GameCollectionViewCell.xib in Resources */,
 				F0E5BAE42715FC4D00F1636A /* Authorization.storyboard in Resources */,
-				F04D1263274138EF0067D210 /* Profile.storyboard in Resources */,
+				F04D126C27413EB80067D210 /* Profile.storyboard in Resources */,
 				F0F63F49270F871D0060EEC3 /* Location.storyboard in Resources */,
 				E90517F0270DD5B600B11967 /* Main.storyboard in Resources */,
 			);
@@ -364,10 +364,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04D12712741400D0067D210 /* ProfileVC3.swift in Sources */,
 				A9AFF3B5271970CE006089B4 /* ErrorModel.swift in Sources */,
 				F036E16F2729B7D300F6A577 /* LocationsAPI.swift in Sources */,
+				F04D12732741402C0067D210 /* ProfileCell3.swift in Sources */,
 				A9AFF3B7271B61C8006089B4 /* MainViewController.swift in Sources */,
-				F04D1260274138EF0067D210 /* ProfileCell.swift in Sources */,
 				A95DC677273811CB00817BA5 /* DateFormatter+Extension.swift in Sources */,
 				508376242710505000F2A815 /* GamesDetailViewController.swift in Sources */,
 				F0F63F33270F3D250060EEC3 /* LocationModel.swift in Sources */,
@@ -380,8 +381,6 @@
 				50A270B7272067A5000CEFF3 /* GameCollectionViewCell.swift in Sources */,
 				F0F63F3A270F3DB30060EEC3 /* LocationsViewController.swift in Sources */,
 				A9670831273EA592006C4052 /* ScheduleTimeSlot.swift in Sources */,
-				F04D1264274138EF0067D210 /* ProfileVC3.swift in Sources */,
-				F04D1262274138EF0067D210 /* ProfileVC2.swift in Sources */,
 				A90E9694270F34BC00370583 /* Team.swift in Sources */,
 				A9AFF3A12713291A006089B4 /* EventService.swift in Sources */,
 				A9AFF3C12736D55A006089B4 /* LocationScheduleViewController.swift in Sources */,
@@ -398,18 +397,15 @@
 				A9AFF3A72715C394006089B4 /* Category.swift in Sources */,
 				A9AFF3AD271966F0006089B4 /* AuthData.swift in Sources */,
 				A9670835273EAFA7006C4052 /* String+Date.swift in Sources */,
-				F04D1261274138EF0067D210 /* ProfileVC.swift in Sources */,
-				F04D1251274138BA0067D210 /* ProfileTableView.swift in Sources */,
 				E90517E9270DD5B600B11967 /* AppDelegate.swift in Sources */,
 				E90517EB270DD5B600B11967 /* SceneDelegate.swift in Sources */,
 				508376232710505000F2A815 /* GamesMainViewController.swift in Sources */,
-				F04D1265274138EF0067D210 /* ExpandableHeaderView.swift in Sources */,
-				F04D1266274138EF0067D210 /* ProfileViewController.swift in Sources */,
 				A95DC67527380D5400817BA5 /* Date+Format.swift in Sources */,
 				A9AFF3B1271967B9006089B4 /* AuthResponse.swift in Sources */,
 				A9AFF3BD272EBD53006089B4 /* Place.swift in Sources */,
 				A9AFF3A927186266006089B4 /* AuthService.swift in Sources */,
 				A9AFF3B9272EB8CA006089B4 /* LocationDetailViewController.swift in Sources */,
+				F04D1275274140520067D210 /* ProfileTableView.swift in Sources */,
 				A95DC6702736D86C00817BA5 /* LocationScheduleSlotTableViewCell.swift in Sources */,
 				A95DC679273926E700817BA5 /* CreateEventViewController.swift in Sources */,
 			);
@@ -560,7 +556,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Place of games/Place of games.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BX832Z4ZJ4;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Place of games/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -580,7 +576,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Place of games/Place of games.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BX832Z4ZJ4;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Place of games/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
