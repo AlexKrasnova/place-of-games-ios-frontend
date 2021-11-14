@@ -14,3 +14,4 @@ struct Place: Codable {
     let description: String?
     let workingHoursList: [WorkingHours]?
 }
+

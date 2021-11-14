@@ -38,7 +38,7 @@
                             <constraint firstItem="nXe-Tp-BFL" firstAttribute="trailing" secondItem="0GR-Pw-HDQ" secondAttribute="trailing" id="s9e-W3-PGO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Игры поблизости" id="GsA-hi-vm1">
+                    <navigationItem key="navigationItem" title="🎯 Игры поблизости" id="GsA-hi-vm1">
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="0QL-1S-lEP">
                             <connections>
                                 <action selector="refreshButtonTapped:" destination="APU-MO-F1P" id="XrW-4V-uMa"/>
