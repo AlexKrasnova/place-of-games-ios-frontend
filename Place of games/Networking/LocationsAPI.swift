@@ -10,10 +10,13 @@ import Foundation
 enum LocationAPI {
     
     case places
+    case freeTime (placeId: Int, date: Date)
     
     var method: String {
         switch self {
         case .places:
+            return "GET"
+        case .freeTime:
             return "GET"
         }
     }
@@ -26,12 +29,26 @@ enum LocationAPI {
         switch self {
         case .places:
             return "places"
+        case .freeTime(let placeId, _):
+            return "places/\(placeId)/free-time"
         }
     }
     
     func asURLRequest() -> URLRequest {
         var url = URL(string: baseUrl)!
         url.appendPathComponent(path)
+        
+        
+        
+        switch self {
+        case .freeTime(_, let date):
+            var components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
+            let dateItem = URLQueryItem(name: "date", value: date.string(format: "yyyy-MM-dd"))
+            components.queryItems = [dateItem]
+            url = components.url!
+        default:
+            break
+        }
         
         var request = URLRequest(url: url)
         

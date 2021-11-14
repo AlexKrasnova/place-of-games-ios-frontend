@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Category: String, Codable {
+enum Category: String, Codable, CaseIterable {
     
     case football = "FOOTBALL"
     case tennis = "TENNIS"

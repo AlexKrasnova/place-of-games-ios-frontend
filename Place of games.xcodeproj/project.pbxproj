@@ -13,11 +13,18 @@
 		508376262710505C00F2A815 /* GamesStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508376252710505C00F2A815 /* GamesStoryboard.storyboard */; };
 		50A270B7272067A5000CEFF3 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A270B5272067A5000CEFF3 /* GameCollectionViewCell.swift */; };
 		50A270B8272067A5000CEFF3 /* GameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A270B6272067A5000CEFF3 /* GameCollectionViewCell.xib */; };
-		50FF717427254C3400808D99 /* AddNewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FF717327254C3400808D99 /* AddNewGameViewController.swift */; };
 		A90E968D270F21C500370583 /* Teams.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90E968C270F21C500370583 /* Teams.storyboard */; };
 		A90E9690270F2DC900370583 /* MyTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E968F270F2DC900370583 /* MyTeamsViewController.swift */; };
 		A90E9692270F2F0400370583 /* MyTeamsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E9691270F2F0400370583 /* MyTeamsTableViewCell.swift */; };
 		A90E9694270F34BC00370583 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E9693270F34BC00370583 /* Team.swift */; };
+		A95DC6702736D86C00817BA5 /* LocationScheduleSlotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95DC66F2736D86C00817BA5 /* LocationScheduleSlotTableViewCell.swift */; };
+		A95DC6722738071200817BA5 /* PlaceFreeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95DC6712738071200817BA5 /* PlaceFreeTime.swift */; };
+		A95DC67527380D5400817BA5 /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95DC67427380D5400817BA5 /* Date+Format.swift */; };
+		A95DC677273811CB00817BA5 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95DC676273811CB00817BA5 /* DateFormatter+Extension.swift */; };
+		A95DC679273926E700817BA5 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95DC678273926E700817BA5 /* CreateEventViewController.swift */; };
+		A9670831273EA592006C4052 /* ScheduleTimeSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9670830273EA592006C4052 /* ScheduleTimeSlot.swift */; };
+		A9670833273EA83B006C4052 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9670832273EA83B006C4052 /* DayOfWeek.swift */; };
+		A9670835273EAFA7006C4052 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9670834273EAFA7006C4052 /* String+Date.swift */; };
 		A9AFF3A12713291A006089B4 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3A02713291A006089B4 /* EventService.swift */; };
 		A9AFF3A427132C8A006089B4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3A327132C8A006089B4 /* API.swift */; };
 		A9AFF3A72715C394006089B4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3A62715C394006089B4 /* Category.swift */; };
@@ -32,12 +39,12 @@
 		A9AFF3BB272EBA70006089B4 /* LocationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3BA272EBA70006089B4 /* LocationsService.swift */; };
 		A9AFF3BD272EBD53006089B4 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3BC272EBD53006089B4 /* Place.swift */; };
 		A9AFF3BF272EBE95006089B4 /* WorkingHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3BE272EBE95006089B4 /* WorkingHours.swift */; };
+		A9AFF3C12736D55A006089B4 /* LocationScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFF3C02736D55A006089B4 /* LocationScheduleViewController.swift */; };
 		E90517E9270DD5B600B11967 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90517E8270DD5B600B11967 /* AppDelegate.swift */; };
 		E90517EB270DD5B600B11967 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90517EA270DD5B600B11967 /* SceneDelegate.swift */; };
 		E90517F0270DD5B600B11967 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90517EE270DD5B600B11967 /* Main.storyboard */; };
 		E90517F2270DD5B700B11967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90517F1270DD5B700B11967 /* Assets.xcassets */; };
 		E90517F5270DD5B700B11967 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90517F3270DD5B700B11967 /* LaunchScreen.storyboard */; };
-		F036E16C2729A95B00F6A577 /* LocationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036E16B2729A95B00F6A577 /* LocationsService.swift */; };
 		F036E16F2729B7D300F6A577 /* LocationsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036E16E2729B7D300F6A577 /* LocationsAPI.swift */; };
 		F0E5BAE42715FC4D00F1636A /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E5BAE32715FC4D00F1636A /* Authorization.storyboard */; };
 		F0E5BAE7271606E000F1636A /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5BAE6271606E000F1636A /* AuthorizationViewController.swift */; };
@@ -55,11 +62,18 @@
 		508376252710505C00F2A815 /* GamesStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GamesStoryboard.storyboard; sourceTree = "<group>"; };
 		50A270B5272067A5000CEFF3 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		50A270B6272067A5000CEFF3 /* GameCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameCollectionViewCell.xib; sourceTree = "<group>"; };
-		50FF717327254C3400808D99 /* AddNewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGameViewController.swift; sourceTree = "<group>"; };
 		A90E968C270F21C500370583 /* Teams.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Teams.storyboard; sourceTree = "<group>"; };
 		A90E968F270F2DC900370583 /* MyTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamsViewController.swift; sourceTree = "<group>"; };
 		A90E9691270F2F0400370583 /* MyTeamsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamsTableViewCell.swift; sourceTree = "<group>"; };
 		A90E9693270F34BC00370583 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		A95DC66F2736D86C00817BA5 /* LocationScheduleSlotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScheduleSlotTableViewCell.swift; sourceTree = "<group>"; };
+		A95DC6712738071200817BA5 /* PlaceFreeTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceFreeTime.swift; sourceTree = "<group>"; };
+		A95DC67427380D5400817BA5 /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
+		A95DC676273811CB00817BA5 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		A95DC678273926E700817BA5 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
+		A9670830273EA592006C4052 /* ScheduleTimeSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTimeSlot.swift; sourceTree = "<group>"; };
+		A9670832273EA83B006C4052 /* DayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
+		A9670834273EAFA7006C4052 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		A9AFF3A02713291A006089B4 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		A9AFF3A327132C8A006089B4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A9AFF3A62715C394006089B4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -74,6 +88,7 @@
 		A9AFF3BA272EBA70006089B4 /* LocationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsService.swift; sourceTree = "<group>"; };
 		A9AFF3BC272EBD53006089B4 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		A9AFF3BE272EBE95006089B4 /* WorkingHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingHours.swift; sourceTree = "<group>"; };
+		A9AFF3C02736D55A006089B4 /* LocationScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScheduleViewController.swift; sourceTree = "<group>"; };
 		E90517E5270DD5B600B11967 /* Place of games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Place of games.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90517E8270DD5B600B11967 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E90517EA270DD5B600B11967 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +96,6 @@
 		E90517F1270DD5B700B11967 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E90517F4270DD5B700B11967 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E90517F6270DD5B700B11967 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F036E16B2729A95B00F6A577 /* LocationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsService.swift; sourceTree = "<group>"; };
 		F036E16E2729B7D300F6A577 /* LocationsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsAPI.swift; sourceTree = "<group>"; };
 		F0E5BAE32715FC4D00F1636A /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		F0E5BAE6271606E000F1636A /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +124,6 @@
 				508376252710505C00F2A815 /* GamesStoryboard.storyboard */,
 				508376212710505000F2A815 /* GamesDetailViewController.swift */,
 				508376202710505000F2A815 /* GamesMainViewController.swift */,
-				50FF717327254C3400808D99 /* AddNewGameViewController.swift */,
 			);
 			path = GamesViewControllers;
 			sourceTree = "<group>";
@@ -133,6 +146,16 @@
 				A90E9693270F34BC00370583 /* Team.swift */,
 			);
 			path = Teams;
+			sourceTree = "<group>";
+		};
+		A95DC67327380D4000817BA5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A95DC67427380D5400817BA5 /* Date+Format.swift */,
+				A95DC676273811CB00817BA5 /* DateFormatter+Extension.swift */,
+				A9670834273EAFA7006C4052 /* String+Date.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		A9AFF39F271328D9006089B4 /* Services */ = {
@@ -167,6 +190,9 @@
 				A9AFF3B4271970CE006089B4 /* ErrorModel.swift */,
 				A9AFF3BC272EBD53006089B4 /* Place.swift */,
 				A9AFF3BE272EBE95006089B4 /* WorkingHours.swift */,
+				A95DC6712738071200817BA5 /* PlaceFreeTime.swift */,
+				A9670830273EA592006C4052 /* ScheduleTimeSlot.swift */,
+				A9670832273EA83B006C4052 /* DayOfWeek.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +216,7 @@
 		E90517E7270DD5B600B11967 /* Place of games */ = {
 			isa = PBXGroup;
 			children = (
+				A95DC67327380D4000817BA5 /* Utils */,
 				F0E5BAE22715FC0F00F1636A /* Authorization */,
 				A9AFF3A527133522006089B4 /* Models */,
 				A9AFF3A227132C63006089B4 /* Networking */,
@@ -225,6 +252,9 @@
 				F0F63F36270F3D980060EEC3 /* LocationTableViewCell.swift */,
 				A9AFF3B8272EB8CA006089B4 /* LocationDetailViewController.swift */,
 				F0F63F48270F871D0060EEC3 /* Location.storyboard */,
+				A9AFF3C02736D55A006089B4 /* LocationScheduleViewController.swift */,
+				A95DC66F2736D86C00817BA5 /* LocationScheduleSlotTableViewCell.swift */,
+				A95DC678273926E700817BA5 /* CreateEventViewController.swift */,
 			);
 			path = Locations;
 			sourceTree = "<group>";
@@ -307,33 +337,41 @@
 				A9AFF3B5271970CE006089B4 /* ErrorModel.swift in Sources */,
 				F036E16F2729B7D300F6A577 /* LocationsAPI.swift in Sources */,
 				A9AFF3B7271B61C8006089B4 /* MainViewController.swift in Sources */,
+				A95DC677273811CB00817BA5 /* DateFormatter+Extension.swift in Sources */,
 				508376242710505000F2A815 /* GamesDetailViewController.swift in Sources */,
 				F0F63F33270F3D250060EEC3 /* LocationModel.swift in Sources */,
 				F0F63F37270F3D990060EEC3 /* LocationTableViewCell.swift in Sources */,
-				50FF717427254C3400808D99 /* AddNewGameViewController.swift in Sources */,
 				F0E5BAE7271606E000F1636A /* AuthorizationViewController.swift in Sources */,
 				A9AFF3BF272EBE95006089B4 /* WorkingHours.swift in Sources */,
 				A9AFF3AB27186CC3006089B4 /* AuthAPI.swift in Sources */,
 				A9AFF3A427132C8A006089B4 /* API.swift in Sources */,
 				50A270B7272067A5000CEFF3 /* GameCollectionViewCell.swift in Sources */,
 				F0F63F3A270F3DB30060EEC3 /* LocationsViewController.swift in Sources */,
+				A9670831273EA592006C4052 /* ScheduleTimeSlot.swift in Sources */,
 				A90E9694270F34BC00370583 /* Team.swift in Sources */,
 				A9AFF3A12713291A006089B4 /* EventService.swift in Sources */,
+				A9AFF3C12736D55A006089B4 /* LocationScheduleViewController.swift in Sources */,
 				A90E9690270F2DC900370583 /* MyTeamsViewController.swift in Sources */,
 				A9AFF3BB272EBA70006089B4 /* LocationsService.swift in Sources */,
 				A90E9692270F2F0400370583 /* MyTeamsTableViewCell.swift in Sources */,
+				A95DC6722738071200817BA5 /* PlaceFreeTime.swift in Sources */,
 				F0E5BAEB27198F7F00F1636A /* SignUpViewController.swift in Sources */,
+				A9670833273EA83B006C4052 /* DayOfWeek.swift in Sources */,
 				5083761D2710501800F2A815 /* Game.swift in Sources */,
 				A9AFF3AF2719679F006089B4 /* RegisterData.swift in Sources */,
 				A9AFF3A72715C394006089B4 /* Category.swift in Sources */,
 				A9AFF3AD271966F0006089B4 /* AuthData.swift in Sources */,
+				A9670835273EAFA7006C4052 /* String+Date.swift in Sources */,
 				E90517E9270DD5B600B11967 /* AppDelegate.swift in Sources */,
 				E90517EB270DD5B600B11967 /* SceneDelegate.swift in Sources */,
 				508376232710505000F2A815 /* GamesMainViewController.swift in Sources */,
+				A95DC67527380D5400817BA5 /* Date+Format.swift in Sources */,
 				A9AFF3B1271967B9006089B4 /* AuthResponse.swift in Sources */,
 				A9AFF3BD272EBD53006089B4 /* Place.swift in Sources */,
 				A9AFF3A927186266006089B4 /* AuthService.swift in Sources */,
 				A9AFF3B9272EB8CA006089B4 /* LocationDetailViewController.swift in Sources */,
+				A95DC6702736D86C00817BA5 /* LocationScheduleSlotTableViewCell.swift in Sources */,
+				A95DC679273926E700817BA5 /* CreateEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
