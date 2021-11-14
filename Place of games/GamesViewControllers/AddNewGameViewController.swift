@@ -36,27 +36,33 @@ class AddNewGameViewController: UIViewController {
 
     @IBAction func createButtonTapped(_ sender: UIButton) {
         
-//        let name = addNameTextField.text!
-//        let time = addTimeTextField.text!
-//        let duration = addDurationTextField.text!
-//        let durationInt = Int(duration)!
-//        let maxNumber = addMaxNumberTextField.text
-//        let maxNumberInt = Int(maxNumber!)!
-//        let address = addAddressTextField.text!
-//        let id = 3
-//        let numberOfParticipants = 0
+        let name = addNameTextField.text!
+        let time = addTimeTextField.text!
+        let duration = addDurationTextField.text!
+        let durationInt = Int(duration)!
+        let maxNumber = addMaxNumberTextField.text
+        let maxNumberInt = Int(maxNumber!)!
+        let address = addAddressTextField.text!
+        let id = 3
+        let numberOfParticipants = 0
         
-//        let newGame = Game(id: id,
-//                           name: name,
-//                           time: time,
-//                           duration: durationInt,
-//                           place: Place(id: id,
-//                                        name: "no",
-//                                        address: address,
-//                                        description: "no"),
-//                           maxNumberOfParticipants: maxNumberInt,
-//                           numberOfParticipants: numberOfParticipants,
-//                           category: .basketball)
+        let newGame = Game(id: id,
+                           name: name,
+                           time: Date(),
+                           duration: durationInt,
+                           place: Place(id: id,
+                                        name: "no",
+                                        address: address,
+                                        description: "no",
+                                        workingHoursList: nil),
+                           maxNumberOfParticipants: maxNumberInt,
+                           numberOfParticipants: numberOfParticipants,
+                           category: .basketball
+        )
+        let service = EventService()
+        service.create(event: newGame) {
+            needUpdateMyGames = true
+        }
         
         dismiss(animated: true, completion: nil)
         
