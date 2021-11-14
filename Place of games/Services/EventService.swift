@@ -16,7 +16,9 @@ class EventService {
         session.dataTask(with: request) { data, response, error in
             guard error == nil else { return }
             guard let data = data else { return }
-            let games = try! JSONDecoder().decode([Game].self, from: data)
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(DateFormatter.formatter(format: "yyyy-MM-dd'T'HH:mm:ss"))
+            let games = try! decoder.decode([Game].self, from: data)
             completion(games)
         }.resume()
     }
@@ -32,6 +34,16 @@ class EventService {
         }.resume()
     }
     
+    func create(event: Game, completion: @escaping () -> Void) {
+        let request = API.postEvent(event: event).asUrlRequest()
+        session.dataTask(with: request) { data, response, error in
+            guard error == nil else { return }
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 201
+            else { return }
+            completion()
+        }.resume()
+    }
     func getMyEvents(completion: @escaping () -> Void) {
         let request = API.getMyEvents.asUrlRequest()
         session.dataTask(with: request) { data, response, error in
@@ -60,13 +72,3 @@ class EventService {
 
 }
 
-//func signUp(game: Game, completion: @escaping () -> Void) {
-//    let request = API.postParticipants(eventId: game.id).asUrlRequest()
-//    session.dataTask(with: request) { _, response, error in
-//        guard error == nil else { return }
-//        guard let httpResponse = response as? HTTPURLResponse,
-//              httpResponse.statusCode == 200
-//        else { return }
-//        completion()
-//    }.resume()
-//}

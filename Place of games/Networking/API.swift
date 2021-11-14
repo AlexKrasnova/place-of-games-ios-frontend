@@ -11,6 +11,7 @@ enum API {
     case getEvents
     case postParticipants(eventId: Int)
     case getPlace(placeId: Int)
+    case postEvent(event: Game)
     case getMyEvents
     case getParticipatingEvents
     case user
@@ -19,7 +20,7 @@ enum API {
         switch self {
         case .getEvents, .getPlace, .getMyEvents, .getParticipatingEvents, .user:
             return "GET"
-        case .postParticipants:
+        case .postParticipants, .postEvent:
             return "POST"
         }
     }
@@ -30,7 +31,7 @@ enum API {
     
     var path: String {
         switch self {
-        case .getEvents:
+        case .getEvents, .postEvent:
             return "events"
         case .postParticipants(let eventId):
             return "events/\(eventId)/participants"
@@ -50,8 +51,18 @@ enum API {
         url.appendPathComponent(path)
         
         var request = URLRequest(url: url)
+        request.httpMethod = method
         if let token = AuthService.shared.token {
             request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+        
+        switch self {
+        case .postEvent(let event):
+            let data = try! JSONEncoder().encode(event)
+            request.httpBody = data
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        default:
+            break
         }
         
         return request

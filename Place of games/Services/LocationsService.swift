@@ -22,11 +22,23 @@ class LocationsService {
   
     func locationBy(id: Int, completion: @escaping (Place) -> Void) {
         let request = API.getPlace(placeId: id).asUrlRequest()
-        session.dataTask(with: request) { data, respons, error in
+        session.dataTask(with: request) { data, response, error in
             guard error == nil else { return }
             guard let data = data else { return }
             let place = try! JSONDecoder().decode(Place.self, from: data)
             completion(place)
+        }.resume()
+    }
+    
+    func getLocationFreeTime(id: Int, date: Date, completion: @escaping ([PlaceFreeTime]) -> Void) {
+        let request = LocationAPI.freeTime(placeId: id, date: date).asURLRequest()
+        session.dataTask(with: request) { data, response, error in
+            guard error == nil else { return }
+            guard let data = data else { return }
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(DateFormatter.formatter(format: "yyyy-MM-dd'T'HH:mm:ss"))
+            let freeTimes = try! decoder.decode([PlaceFreeTime].self, from: data)
+            completion(freeTimes)
         }.resume()
     }
 }
