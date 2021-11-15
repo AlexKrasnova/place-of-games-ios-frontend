@@ -9,6 +9,8 @@ import UIKit
 
 class GameCollectionViewCell: UICollectionViewCell {
     
+    var gameStatus = 1
+    @IBOutlet weak var joinToGameButton: UIButton!
     @IBOutlet weak var gameImage: UIImageView!
     
     @IBOutlet weak var gameName: UILabel!
@@ -19,6 +21,9 @@ class GameCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        joinToGameButton.addTarget(self, action: #selector(joinToGame), for: .touchUpInside)
+        joinToGameButton.setTitle("Записаться", for: .normal)
+        joinToGameButton.backgroundColor = UIColor.cyan
     }
     
     func setupCell() {
@@ -29,6 +34,20 @@ class GameCollectionViewCell: UICollectionViewCell {
         
         
         
+    }
+    
+    @objc func joinToGame() {
+        switch gameStatus {
+        case 1:
+            gameStatus = 2
+            joinToGameButton.setTitle("Отменить", for: .normal)
+            joinToGameButton.backgroundColor = UIColor.systemGray2
+        case 2:
+            gameStatus = 1
+            joinToGameButton.setTitle("Записаться", for: .normal)
+            joinToGameButton.backgroundColor = UIColor.cyan
+        default: break
+        }
     }
 
 }
