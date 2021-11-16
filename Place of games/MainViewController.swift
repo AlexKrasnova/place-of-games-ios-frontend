@@ -19,17 +19,6 @@ class MainViewController: UITabBarController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if AuthService.shared.token == nil {
-            let authStoriboard = UIStoryboard(name: "Authorization", bundle: nil)
-            let viewController = authStoriboard.instantiateInitialViewController()!
-            viewController.modalPresentationStyle = .fullScreen
-            present(viewController, animated: false, completion: nil)
-            
-        } else {
-            if let gamesNavVC = viewControllers?.first as? UINavigationController,
-               let gamesVC = gamesNavVC.viewControllers.first as? GamesMainViewController {
-                gamesVC.loadData()
-            }
-        }
+
     }
 }

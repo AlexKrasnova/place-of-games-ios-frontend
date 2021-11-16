@@ -36,7 +36,8 @@ class AuthorizationViewController: UIViewController {
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
+                    let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+                    sceneDelegate.showMain()
                 }
             }
         }

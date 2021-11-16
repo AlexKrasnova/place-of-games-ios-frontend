@@ -15,12 +15,11 @@ enum AuthAPI {
         switch self {
         case .token, .register:
             return "POST"
-        
         }
     }
         
     var baseUrl: String {
-        "http://localhost:8080/api/v1"
+        "http://localhost:8080/api/v1/"
     }
     
     var path: String {
