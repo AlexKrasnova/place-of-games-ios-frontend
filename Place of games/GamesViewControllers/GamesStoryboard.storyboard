@@ -122,6 +122,15 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hj-S0-Y4V">
+                                <rect key="frame" x="40" y="189" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="y7S-v7-5b6">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oCq-fe-gvU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -139,7 +148,13 @@
                             <constraint firstItem="uxw-MC-N7m" firstAttribute="top" secondItem="oCq-fe-gvU" secondAttribute="top" constant="350" id="tD6-at-9Be"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VOY-B9-hqE"/>
+                    <navigationItem key="navigationItem" id="VOY-B9-hqE">
+                        <barButtonItem key="rightBarButtonItem" title="Info" image="info.circle" catalog="system" id="s1b-sW-XTi">
+                            <connections>
+                                <action selector="showWindowWithParticipants:" destination="BT4-0b-iSv" id="Yoh-Sz-Peq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="gameAddressLabel" destination="Gze-sm-1gl" id="wbf-Tv-duz"/>
                         <outlet property="gameImage" destination="B6e-we-1gd" id="jtp-gN-Sgh"/>
@@ -147,9 +162,47 @@
                         <outlet property="gameParticipantsLabel" destination="2N4-ux-I9e" id="kdC-M1-jzN"/>
                         <outlet property="gameTimeLabel" destination="5Ft-D0-OLi" id="X8N-1i-8kt"/>
                         <outlet property="joinToGameButton" destination="h84-yy-7dy" id="a9A-bN-s0S"/>
+                        <outlet property="participantsTableView" destination="19V-Gj-ugk" id="2gb-Pf-RwP"/>
+                        <outlet property="visualEffectFrame" destination="1hj-S0-Y4V" id="r3M-CI-Ojc"/>
+                        <outlet property="windowView" destination="has-ns-rOG" id="N3B-aH-eqh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MLr-yS-Our" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="has-ns-rOG">
+                    <rect key="frame" x="0.0" y="0.0" width="323" height="287"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="19V-Gj-ugk">
+                            <rect key="frame" x="0.0" y="106" width="323" height="181"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFz-mU-FFd">
+                            <rect key="frame" x="271.5" y="10" width="41.5" height="32"/>
+                            <buttonConfiguration key="configuration" style="plain"/>
+                            <connections>
+                                <action selector="dismissWindow:" destination="BT4-0b-iSv" eventType="touchUpInside" id="tbC-L0-aav"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Участники" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKm-9g-9df">
+                            <rect key="frame" x="30" y="64" width="91" height="22"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="K0N-hJ-QdB"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="19V-Gj-ugk" firstAttribute="leading" secondItem="K0N-hJ-QdB" secondAttribute="leading" id="3El-Su-sEe"/>
+                        <constraint firstItem="cKm-9g-9df" firstAttribute="top" secondItem="K0N-hJ-QdB" secondAttribute="top" constant="20" id="AfM-nt-Gif"/>
+                        <constraint firstItem="cKm-9g-9df" firstAttribute="leading" secondItem="K0N-hJ-QdB" secondAttribute="leading" constant="30" id="bt0-6C-Obx"/>
+                        <constraint firstItem="K0N-hJ-QdB" firstAttribute="trailing" secondItem="19V-Gj-ugk" secondAttribute="trailing" id="c5b-PU-gN9"/>
+                        <constraint firstItem="tFz-mU-FFd" firstAttribute="top" secondItem="has-ns-rOG" secondAttribute="top" constant="10" id="dg8-zz-C2g"/>
+                        <constraint firstItem="K0N-hJ-QdB" firstAttribute="trailing" secondItem="tFz-mU-FFd" secondAttribute="trailing" constant="10" id="eWO-Fm-QxH"/>
+                        <constraint firstItem="19V-Gj-ugk" firstAttribute="top" secondItem="cKm-9g-9df" secondAttribute="bottom" constant="20" id="mYZ-Hv-PVz"/>
+                        <constraint firstItem="K0N-hJ-QdB" firstAttribute="bottom" secondItem="19V-Gj-ugk" secondAttribute="bottom" id="qfd-Zx-w62"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="2644.9275362318845" y="79.6875"/>
         </scene>
@@ -176,6 +229,7 @@
     </scenes>
     <resources>
         <image name="icon-games" width="20" height="23"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
