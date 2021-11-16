@@ -55,6 +55,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
                             category: selectedCategory ?? .unknown,
                             placeId: place.id)
         service.create(event: newEvent) {
+            needUpdateMyEvents = true
             DispatchQueue.main.async {
                 self.navigationController?.popViewController(animated: true)
             }
