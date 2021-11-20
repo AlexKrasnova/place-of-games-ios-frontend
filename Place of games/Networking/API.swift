@@ -10,8 +10,9 @@ import Foundation
 enum API {
     case getEvents
     case postParticipants(eventId: Int)
+    case deleteParticipants(eventId: Int)
     case getPlace(placeId: Int)
-    case postEvent(event: Game)
+    case postEvent(event: Event)
     case getMyEvents
     case getParticipatingEvents
     case user
@@ -23,6 +24,8 @@ enum API {
             return "GET"
         case .postParticipants, .postEvent:
             return "POST"
+        case .deleteParticipants:
+            return "DELETE"
         }
     }
     
@@ -34,7 +37,7 @@ enum API {
         switch self {
         case .getEvents, .postEvent:
             return "events"
-        case .postParticipants(let eventId):
+        case .postParticipants(let eventId), .deleteParticipants(let eventId):
             return "events/\(eventId)/participants"
         case .getPlace(let placeId):
             return "places/\(placeId)"

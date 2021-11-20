@@ -45,7 +45,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     @IBAction func createEvent() {
-        let newEvent = Game(id: 0,
+        let newEvent = Event(id: 0,
                             name: eventNameTextField.text!,
                             time: startTime,
                             duration: duration,
@@ -53,6 +53,8 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
                             maxNumberOfParticipants: Int(numberOfParticipantsTextFields.text!) ?? 0,
                             numberOfParticipants: 0,
                             category: selectedCategory ?? .unknown,
+                            isCurrentUserEnrolled: false,
+                            isCurrentUserOwner: true,
                             placeId: place.id)
         service.create(event: newEvent) {
             DispatchQueue.main.async {

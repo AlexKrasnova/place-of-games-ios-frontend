@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Игры поблизости-->
+        <!--🎯 Игры поблизости-->
         <scene sceneID="eZ6-qn-4mo">
             <objects>
                 <viewController storyboardIdentifier="GamesMainViewController" modalPresentationStyle="fullScreen" id="APU-MO-F1P" customClass="GamesMainViewController" customModule="Place_of_games" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,8 +177,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFz-mU-FFd">
-                            <rect key="frame" x="271.5" y="10" width="41.5" height="32"/>
-                            <buttonConfiguration key="configuration" style="plain"/>
+                            <rect key="frame" x="283" y="10" width="30" height="30"/>
                             <connections>
                                 <action selector="dismissWindow:" destination="BT4-0b-iSv" eventType="touchUpInside" id="tbC-L0-aav"/>
                             </connections>

@@ -29,19 +29,20 @@ class GamesDetailViewController: UIViewController {
     @IBOutlet weak var visualEffectFrame: UIVisualEffectView!
     var effect: UIVisualEffect!
     @IBOutlet weak var gameImage: UIImageView!
-    
-    var gameStatus = 1
+
     var newNumberOfParticipants: Int?
     
-    var game: Game?
+    var game: Event?
     var persons: [Person] = []
+    
+    private let service = EventService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        visualEffectFrame.frame = view.bounds
-        visualEffectFrame.center = view.center
-        effect = visualEffectFrame.effect
+//        visualEffectFrame.frame = view.bounds
+//        visualEffectFrame.center = view.center
+//        effect = visualEffectFrame.effect
         visualEffectFrame.effect = nil
         
         
@@ -51,46 +52,40 @@ class GamesDetailViewController: UIViewController {
     }
     
     
-    func setupUI(game: Game) {
-        
+    func setupUI(game: Event) {
+        self.game = game
         gameName.text = game.name
         gameImage.image = game.category.image
         gameImage.layer.cornerRadius = 20
         gameTimeLabel.text = "\(game.time) (Длительность: \(game.duration) мин"
         gameAddressLabel.text = game.place.address
         gameParticipantsLabel.text = "Занято \(game.numberOfParticipants) из \(game.maxNumberOfParticipants)"
-        joinToGameButton.setTitle("Записаться на игру", for: .normal)
-        joinToGameButton.backgroundColor = UIColor.blue
-        
         
         if game.numberOfParticipants == game.maxNumberOfParticipants {
             joinToGameButton.backgroundColor = UIColor.systemGray5
             joinToGameButton.setTitle("Мест нет", for: .normal)
         }
         
-        
+        if game.isCurrentUserEnrolled {
+            joinToGameButton.setTitle("Отменить", for: .normal)
+            joinToGameButton.backgroundColor = UIColor.systemGray2
+        } else {
+            joinToGameButton.setTitle("Записаться", for: .normal)
+            joinToGameButton.backgroundColor = UIColor.cyan
+        }
         
     }
     
     @objc func joinToGame() {
-        
-        switch gameStatus {
-        case 1:
-            gameStatus = 2
-            newNumberOfParticipants = game!.numberOfParticipants + 1
-            gameParticipantsLabel.text = "Занято \(newNumberOfParticipants!) из \(game!.maxNumberOfParticipants)"
-            joinToGameButton.setTitle("Вы записаны!  (отменить)", for: .normal)
-            joinToGameButton.backgroundColor = UIColor.systemGray2
-        case 2:
-            gameStatus = 1
-            setupUI(game: game!)
-            
-        default: break
+        service.participate(mebership: !game!.isCurrentUserEnrolled, game: game!) { [weak self] in
+            self?.game!.isCurrentUserEnrolled.toggle()
+            self?.game!.numberOfParticipants += self!.game!.isCurrentUserEnrolled ? 1 : -1
+            DispatchQueue.main.async {
+                self?.setupUI(game: self!.game!)
+            }
         }
-        
-        
     }
-    
+
     @IBAction func showWindowWithParticipants(_ sender: UIBarButtonItem) {
         
         self.view.addSubview(windowView)

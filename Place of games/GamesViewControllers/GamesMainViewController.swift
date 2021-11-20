@@ -16,14 +16,9 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCollectionViewCell", for: indexPath) as? GameCollectionViewCell {
+            let game = games[indexPath.item]
             
-            cell.gameName.text = games[indexPath.item].name
-            cell.gameImage.image = games[indexPath.item].category.image
-            cell.gameAddress.text = games[indexPath.item].place.address
-            cell.gameCount.text = "Забронировано: \(games[indexPath.item].numberOfParticipants) / \(games[indexPath.item].maxNumberOfParticipants)"
-            
-            cell.setupCell()
-            
+            cell.setupCell(event: game)
             return cell
         }
         return UICollectionViewCell()
@@ -37,7 +32,7 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailsVC" {
             if let destinationVC = segue.destination as? GamesDetailViewController {
-                destinationVC.game = sender as? Game
+                destinationVC.game = sender as? Event
             }
         }
         if let destibationVC = segue.destination as? LocationsViewController {
@@ -56,9 +51,9 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var games: [Game] = []
+    var games: [Event] = []
     let service = EventService()
-    var newGame: Game?
+    var newGame: Event?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,13 +61,13 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "GameCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GameCollectionViewCell")
-        loadData()
+        
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-  
+        loadData()
     }
     
     func loadData() {
@@ -96,7 +91,6 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
     
     @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
         loadData()
-        collectionView.reloadData()
     }
 
 }

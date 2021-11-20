@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Game: Codable {
+struct Event: Codable {
     let id: Int
     let name: String
     let time: Date
@@ -17,7 +17,11 @@ struct Game: Codable {
     let maxNumberOfParticipants: Int
     var numberOfParticipants: Int
     let category: Category
+    var isCurrentUserEnrolled: Bool
+    let isCurrentUserOwner: Bool?
+    
     var placeId: Int?
+    
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -29,6 +33,8 @@ struct Game: Codable {
         case maxNumberOfParticipants
         case numberOfParticipants
         case category
+        case isCurrentUserEnrolled
+        case isCurrentUserOwner
     }
     
     func encode(to encoder: Encoder) throws {
