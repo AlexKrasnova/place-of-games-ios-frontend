@@ -7,32 +7,8 @@
 
 import UIKit
 
-class GamesMainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return games.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCollectionViewCell", for: indexPath) as? GameCollectionViewCell {
-            
-            cell.gameName.text = games[indexPath.item].name
-            cell.gameImage.image = games[indexPath.item].category.image
-            cell.gameAddress.text = games[indexPath.item].place.address
-            cell.gameCount.text = "Забронировано: \(games[indexPath.item].numberOfParticipants) / \(games[indexPath.item].maxNumberOfParticipants)"
-            
-            cell.setupCell()
-            
-            return cell
-        }
-        return UICollectionViewCell()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width - 20, height: 130)
-    }
-    
+
+class GamesMainViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailsVC" {
@@ -45,16 +21,7 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let game = games[indexPath.item]
-        performSegue(withIdentifier: "toDetailsVC", sender: game)
-    }
-    
-    
-    
-    
-    
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     
     var games: [Game] = []
     let service = EventService()
@@ -63,9 +30,9 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "GameCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GameCollectionViewCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         loadData()
 
     }
@@ -80,12 +47,11 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
             service.getEvents { games in
                 self.games = games
                 DispatchQueue.main.async {
-                    self.collectionView.reloadData()
+                    self.tableView.reloadData()
                 }
             }
         }
     }
-    
     
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         
@@ -96,8 +62,27 @@ class GamesMainViewController: UIViewController, UICollectionViewDataSource, UIC
     
     @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
         loadData()
-        collectionView.reloadData()
+        tableView.reloadData()
     }
 
 }
 
+extension GamesMainViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return games.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? GameTableViewCell {
+            cell.setupCell(game: games[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        performSegue(withIdentifier: "toDetailsVC", sender: games[indexPath.item])
+    }
+}

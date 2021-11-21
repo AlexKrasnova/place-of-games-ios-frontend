@@ -30,7 +30,6 @@ class GamesDetailViewController: UIViewController {
         
     }
     
-    
     func setupUI(game: Game) {
         
         gameName.text = game.name
@@ -47,9 +46,6 @@ class GamesDetailViewController: UIViewController {
             joinToGameButton.backgroundColor = UIColor.systemGray5
             joinToGameButton.setTitle("Мест нет", for: .normal)
         }
-        
-        
-        
     }
     
     @objc func joinToGame() {
@@ -67,10 +63,5 @@ class GamesDetailViewController: UIViewController {
             
         default: break
         }
-        
-        
     }
-    
-
-    
 }

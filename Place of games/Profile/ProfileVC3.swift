@@ -20,8 +20,7 @@ class ProfileVC3: UIViewController {
     
     override class func awakeFromNib() {
             super.awakeFromNib()
-        }
-    
+    }
     
     var sections = [Profile]()
     let eventService = EventService()
@@ -29,6 +28,7 @@ class ProfileVC3: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.backgroundColor = nil
 
         if let userInfo = AuthService.shared.userInfo {
@@ -40,41 +40,35 @@ class ProfileVC3: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-            if needUpdateMyEvents {
-                updateMyEvents()
-            }
-            if needUpdateMyGames {
-                updateMyGames()
-            }
-            super.viewWillAppear(animated)
+        if needUpdateMyEvents {
+            updateMyEvents()
         }
+        if needUpdateMyGames {
+            updateMyGames()
+        }
+        super.viewWillAppear(animated)
+    }
 
-        func updateMyGames() {
-            needUpdateMyGames = false
-            eventService.getMyEvents { games in
-                let gameNames = games.map { (game) -> String in
-                    return game.name
-                }
-                self.sections[0].row = gameNames
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+    func getEvents(section: Int) {
+        eventService.getMyEvents { games in
+            self.sections[section].row = games
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
+    }
+    
+    func updateMyGames() {
+        needUpdateMyGames = false
+        getEvents(section: 0)
+    }
 
-        func updateMyEvents() {
-            needUpdateMyEvents = false
-            eventService.getMyEvents { games in
-                let gameNames = games.map { (game) -> String in
-                    return game.name
-                }
-                self.sections[1].row = gameNames
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
-        }
+    func updateMyEvents() {
+        needUpdateMyEvents = false
+        getEvents(section: 1)
+    }
 }
+
 
 extension ProfileVC3: UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate {
     
@@ -93,7 +87,7 @@ extension ProfileVC3: UITableViewDataSource, UITableViewDelegate, ExpandableHead
 
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             if (sections[indexPath.section].expanded) {
-                return 44
+                return UITableView.automaticDimension
             } else {
                 return 0
             }
@@ -110,8 +104,8 @@ extension ProfileVC3: UITableViewDataSource, UITableViewDelegate, ExpandableHead
         }
 
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-            cell.textLabel?.text = sections[indexPath.section].row![indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! GameTableViewCell
+            cell.setupCell(game: sections[indexPath.section].row![indexPath.row])
             return cell
         }
 

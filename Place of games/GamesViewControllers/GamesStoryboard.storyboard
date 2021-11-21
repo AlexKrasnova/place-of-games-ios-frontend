@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BAO-iH-EAx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BAO-iH-EAx">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Игры поблизости-->
+        <!--🎯 Игры поблизости-->
         <scene sceneID="eZ6-qn-4mo">
             <objects>
                 <viewController storyboardIdentifier="GamesMainViewController" modalPresentationStyle="fullScreen" id="APU-MO-F1P" customClass="GamesMainViewController" customModule="Place_of_games" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,25 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0GR-Pw-HDQ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zaJ-a0-4by">
+                                <rect key="frame" x="10" y="0.0" width="394" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H9o-ag-ric">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nXe-Tp-BFL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0GR-Pw-HDQ" firstAttribute="top" secondItem="nXe-Tp-BFL" secondAttribute="top" id="OOn-FU-wkt"/>
-                            <constraint firstItem="0GR-Pw-HDQ" firstAttribute="leading" secondItem="nXe-Tp-BFL" secondAttribute="leading" id="bis-ym-cPa"/>
-                            <constraint firstItem="nXe-Tp-BFL" firstAttribute="bottom" secondItem="0GR-Pw-HDQ" secondAttribute="bottom" id="h1M-C4-gZP"/>
-                            <constraint firstItem="nXe-Tp-BFL" firstAttribute="trailing" secondItem="0GR-Pw-HDQ" secondAttribute="trailing" id="s9e-W3-PGO"/>
+                            <constraint firstItem="nXe-Tp-BFL" firstAttribute="trailing" secondItem="zaJ-a0-4by" secondAttribute="trailing" constant="10" id="BsX-cu-j0J"/>
+                            <constraint firstItem="zaJ-a0-4by" firstAttribute="top" secondItem="nXe-Tp-BFL" secondAttribute="top" id="Byg-ik-znB"/>
+                            <constraint firstItem="zaJ-a0-4by" firstAttribute="leading" secondItem="nXe-Tp-BFL" secondAttribute="leading" constant="10" id="MR8-gE-R6z"/>
+                            <constraint firstItem="nXe-Tp-BFL" firstAttribute="bottom" secondItem="zaJ-a0-4by" secondAttribute="bottom" id="ocN-bc-qvO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="🎯 Игры поблизости" id="GsA-hi-vm1">
@@ -52,7 +45,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="0GR-Pw-HDQ" id="Vc4-0T-MRv"/>
+                        <outlet property="tableView" destination="zaJ-a0-4by" id="7Wq-f7-QJ5"/>
                         <segue destination="BT4-0b-iSv" kind="show" identifier="toDetailsVC" id="LQa-cK-ezh"/>
                     </connections>
                 </viewController>

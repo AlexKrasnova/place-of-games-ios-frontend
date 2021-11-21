@@ -8,10 +8,10 @@
 struct Profile: Codable {
 
     var genre: String?
-    var row: [String]?
+    var row: [Game]?
     var expanded: Bool!
 
-    init(genre: String, row: [String], expanded: Bool) {
+    init(genre: String, row: [Game], expanded: Bool) {
         self.genre = genre
         self.row = row
         self.expanded = expanded
