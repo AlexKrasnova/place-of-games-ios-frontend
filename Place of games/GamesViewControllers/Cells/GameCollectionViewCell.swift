@@ -9,7 +9,6 @@ import UIKit
 
 class GameCollectionViewCell: UICollectionViewCell {
     
-    var gameStatus = 1
     @IBOutlet weak var joinToGameButton: UIButton!
     @IBOutlet weak var gameImage: UIImageView!
     
@@ -17,6 +16,10 @@ class GameCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var gameCount: UILabel!
     @IBOutlet weak var gameAddress: UILabel!
+    
+    var event: Event!
+    
+    private let service = EventService()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,28 +29,36 @@ class GameCollectionViewCell: UICollectionViewCell {
         joinToGameButton.backgroundColor = UIColor.cyan
     }
     
-    func setupCell() {
+    func setupCell(event: Event) {
+        self.event = event
         
         self.layer.cornerRadius = 20
         self.layer.masksToBounds = true
         self.backgroundColor = UIColor.systemGray5
         
+        gameName.text = event.name
+        gameImage.image = event.category.image
+        gameAddress.text = event.place.address
+        gameCount.text = "Забронировано: \(event.numberOfParticipants) / \(event.maxNumberOfParticipants)"
         
-        
+        if event.isCurrentUserEnrolled {
+            self.joinToGameButton.setTitle("Отменить", for: .normal)
+            self.joinToGameButton.backgroundColor = UIColor.systemGray2
+        } else {
+            self.joinToGameButton.setTitle("Записаться", for: .normal)
+            self.joinToGameButton.backgroundColor = UIColor.cyan
+        }
     }
     
     @objc func joinToGame() {
-        switch gameStatus {
-        case 1:
-            gameStatus = 2
-            joinToGameButton.setTitle("Отменить", for: .normal)
-            joinToGameButton.backgroundColor = UIColor.systemGray2
-        case 2:
-            gameStatus = 1
-            joinToGameButton.setTitle("Записаться", for: .normal)
-            joinToGameButton.backgroundColor = UIColor.cyan
-        default: break
+        service.participate(mebership: !event.isCurrentUserEnrolled, game: event) { [weak self] in
+            self?.event.isCurrentUserEnrolled.toggle()
+            self?.event.numberOfParticipants += self!.event.isCurrentUserEnrolled ? 1 : -1
+            DispatchQueue.main.async {
+                self?.setupCell(event: self!.event)
+            }
         }
     }
+
 
 }
