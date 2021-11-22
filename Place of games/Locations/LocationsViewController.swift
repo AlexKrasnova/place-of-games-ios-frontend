@@ -59,7 +59,15 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showLocationsDetails", sender: places[indexPath.row].id)
+        let place = places[indexPath.row]
+        if let navigationController = parent as? UINavigationController,
+           navigationController.viewControllers.count > 1,
+           let createEventVC = navigationController.viewControllers[navigationController.viewControllers.count - 2] as? CreateEventViewController {
+            createEventVC.place = place
+            navigationController.popViewController(animated: true)
+            return
+        }
+        performSegue(withIdentifier: "showLocationsDetails", sender: place.id)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -13,19 +13,22 @@ enum API {
     case deleteParticipants(eventId: Int)
     case getPlace(placeId: Int)
     case postEvent(event: Event)
+    case putEvent(event: Event)
     case getMyEvents
     case getParticipatingEvents
     case user
-	case getParticipants(eventId: Int)
+	case eventBy(id: Int)
     
     var method: String {
         switch self {
-        case .getEvents, .getPlace, .getMyEvents, .getParticipatingEvents, .user, .getParticipants:
+        case .getEvents, .getPlace, .getMyEvents, .getParticipatingEvents, .user, .eventBy:
             return "GET"
         case .postParticipants, .postEvent:
             return "POST"
         case .deleteParticipants:
             return "DELETE"
+        case .putEvent:
+            return "PUT"
         }
     }
     
@@ -47,8 +50,10 @@ enum API {
             return "user/events-to-participate"
         case .user:
             return "user"
-        case .getParticipants(let eventId):
+        case .eventBy(let eventId):
             return "events/\(eventId)"
+        case .putEvent(let event):
+            return "events/\(event.id)"
             
         }
     }
@@ -64,7 +69,7 @@ enum API {
         }
         
         switch self {
-        case .postEvent(let event):
+        case .postEvent(let event), .putEvent(let event):
             let data = try! JSONEncoder().encode(event)
             request.httpBody = data
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
