@@ -40,32 +40,4 @@ enum Category: String, Codable, CaseIterable {
     }
 }
 
-//enum CategoryID: String, Codable {
-//
-//    case id1 = "1"
-//    case id2 = "2"
-//    case id3 = "3"
-//    case id4 = "4"
-//    case id5 = "5"
-//    case unknown = ""
-//
-//
-//    var image: UIImage {
-//        switch  self {
-//        case .id1:
-//            return UIImage(named: "footballField")!
-//        case .id2:
-//            return UIImage(named: "kotocafe")!
-//        case .id3:
-//            return UIImage(named: "luzhniki")!
-//        case .id4:
-//            return UIImage(named: "chocolate")!
-//        case .id5:
-//            return UIImage(named: "bowling")!
-//        case .unknown:
-//            return UIImage(named: "football")!
-//
-//        }
-//    }
-//}
 
