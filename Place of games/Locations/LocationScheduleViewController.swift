@@ -14,7 +14,16 @@ class LocationScheduleViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet weak var selectedLabel: UILabel!
     @IBOutlet weak var bookTimeButton: UIButton!
     let service = LocationsService()
-    var place: Place!
+    var place: Place! {
+        didSet {
+            service.getLocationFreeTime(id: place.id, date: Date()) { freeTimes in
+                self.updateSlots(freeTimes: freeTimes, date: Date(), interval: 15)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
     var slots: [ScheduleTimeSlot] = []
     var selectedStartTime: Date?
     var selectedDuration: Int?
@@ -23,15 +32,6 @@ class LocationScheduleViewController: UIViewController, UITableViewDataSource, U
         super.viewDidLoad()
         tableView.rowHeight = UITableView.automaticDimension
         bookTimeButton.isEnabled = false
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        service.getLocationFreeTime(id: place.id, date: Date()) { freeTimes in
-            self.updateSlots(freeTimes: freeTimes, date: Date(), interval: 15)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
     }
     
     private func updateSlots(freeTimes: [PlaceFreeTime], date: Date, interval: Int) {
@@ -100,16 +100,17 @@ class LocationScheduleViewController: UIViewController, UITableViewDataSource, U
     }
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destinationVC = segue.destination as? CreateEventViewController,
-              let place = place,
-              let startTime = selectedStartTime,
-              let duration = selectedDuration
-        else {
-            return
-        }
-        destinationVC.place = place
-        destinationVC.startTime = startTime
-        destinationVC.duration = duration
+        
+//        guard let destinationVC = segue.destination as? CreateEventViewController,
+//              let place = place,
+//              let startTime = selectedStartTime,
+//              let duration = selectedDuration
+//        else {
+//            return
+//        }
+//        destinationVC.place = place
+//        destinationVC.startTime = startTime
+//        destinationVC.duration = duration
     }
     
     
@@ -124,6 +125,19 @@ class LocationScheduleViewController: UIViewController, UITableViewDataSource, U
         }
     }
     
+    @IBAction func bookTimeDidTap() {
+        guard let startTime = selectedStartTime, let duration = selectedDuration else {
+            return
+        }
+        
+        if let navigationController = parent as? UINavigationController,
+           let createEventVC = navigationController.viewControllers[navigationController.viewControllers.count - 2] as? CreateEventViewController {
+            createEventVC.startTime = startTime
+            createEventVC.duration = duration
+            navigationController.popViewController(animated: true)
+            return
+        }
+    }
     
     // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

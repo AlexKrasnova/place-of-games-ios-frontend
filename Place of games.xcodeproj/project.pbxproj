@@ -143,7 +143,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		5083761E2710502600F2A815 /* GamesViewControllers */ = {
+		5083761E2710502600F2A815 /* Events */ = {
 			isa = PBXGroup;
 			children = (
 				502B06F9273EAD1F00E76AB8 /* Extensions */,
@@ -151,8 +151,9 @@
 				508376252710505C00F2A815 /* GamesStoryboard.storyboard */,
 				508376212710505000F2A815 /* GamesDetailViewController.swift */,
 				508376202710505000F2A815 /* GamesMainViewController.swift */,
+				A95DC678273926E700817BA5 /* CreateEventViewController.swift */,
 			);
-			path = GamesViewControllers;
+			path = Events;
 			sourceTree = "<group>";
 		};
 		50A270B427206703000CEFF3 /* Cells */ = {
@@ -252,7 +253,7 @@
 				A9AFF3A527133522006089B4 /* Models */,
 				A9AFF3A227132C63006089B4 /* Networking */,
 				A9AFF39F271328D9006089B4 /* Services */,
-				5083761E2710502600F2A815 /* GamesViewControllers */,
+				5083761E2710502600F2A815 /* Events */,
 				F0AA2AA527319DEE00E24F43 /* Profile */,
 				F0F63F35270F3D480060EEC3 /* Locations */,
 				A90E968E270F2D2C00370583 /* Teams */,
@@ -297,7 +298,6 @@
 				F0F63F48270F871D0060EEC3 /* Location.storyboard */,
 				A9AFF3C02736D55A006089B4 /* LocationScheduleViewController.swift */,
 				A95DC66F2736D86C00817BA5 /* LocationScheduleSlotTableViewCell.swift */,
-				A95DC678273926E700817BA5 /* CreateEventViewController.swift */,
 			);
 			path = Locations;
 			sourceTree = "<group>";

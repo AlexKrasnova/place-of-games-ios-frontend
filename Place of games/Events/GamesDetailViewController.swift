@@ -29,7 +29,8 @@ class GamesDetailViewController: UIViewController {
     @IBOutlet weak var visualEffectFrame: UIVisualEffectView!
     var effect: UIVisualEffect!
     @IBOutlet weak var gameImage: UIImageView!
-
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    
     var newNumberOfParticipants: Int?
     
     var game: Event?
@@ -45,15 +46,27 @@ class GamesDetailViewController: UIViewController {
 //        effect = visualEffectFrame.effect
         visualEffectFrame.effect = nil
         
-        
-        setupUI(game: game!)
         joinToGameButton.addTarget(self, action: #selector(joinToGame), for: .touchUpInside)
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        editButton.isEnabled = false
+        service.getEventBy(id: game!.id) { event in
+            self.game = event
+            DispatchQueue.main.async {
+                self.setupUI(game: event)
+            }
+        }
+    }
+    
     
     func setupUI(game: Event) {
-        self.game = game
+        if let owner = game.isCurrentUserOwner, owner {
+            editButton.isEnabled = true
+        }
         gameName.text = game.name
         gameImage.image = game.category.image
         gameImage.layer.cornerRadius = 20
@@ -100,6 +113,7 @@ class GamesDetailViewController: UIViewController {
             self.windowView.transform = CGAffineTransform.identity
         }
     }
+
     
     private func setupWindow() {
         windowView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width*2/3, height: UIScreen.main.bounds.width)
@@ -121,7 +135,7 @@ class GamesDetailViewController: UIViewController {
     func getParticipants(completion: @escaping ([Person]) -> Void) {
         let id = (game?.id)!
         let session = URLSession(configuration: .default)
-        let request = API.getParticipants(eventId: id).asUrlRequest()
+        let request = API.eventBy(id: id).asUrlRequest()
         session.dataTask(with: request) { data, response, error in
             guard error == nil else { return }
             guard let data = data else { return }
@@ -141,6 +155,14 @@ class GamesDetailViewController: UIViewController {
             self.windowView.transform = CGAffineTransform.identity
         }
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let createEventVC = segue.destination as? CreateEventViewController {
+            createEventVC.editEvent = game!
+        }
+    }
+    
 }
 
 
