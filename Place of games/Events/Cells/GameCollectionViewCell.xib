@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,6 +52,14 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eod-DT-dgF">
+                        <rect key="frame" x="232" y="91.5" width="150" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="Gmw-Uj-Xga"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -61,6 +69,8 @@
                 <constraint firstItem="BuZ-IA-rsX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Vrz-EU-m0a"/>
                 <constraint firstItem="VAC-6y-c2b" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="cmc-De-oX0"/>
                 <constraint firstItem="BuZ-IA-rsX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="rw7-3L-kkW"/>
+                <constraint firstAttribute="trailing" secondItem="Eod-DT-dgF" secondAttribute="trailing" constant="20" id="sXF-CP-Y3i"/>
+                <constraint firstItem="Eod-DT-dgF" firstAttribute="top" secondItem="VAC-6y-c2b" secondAttribute="bottom" constant="5" id="vK0-fa-enw"/>
             </constraints>
             <size key="customSize" width="402" height="188"/>
             <connections>
@@ -68,6 +78,7 @@
                 <outlet property="gameCount" destination="IwP-1h-jTJ" id="roj-d3-nGe"/>
                 <outlet property="gameImage" destination="BuZ-IA-rsX" id="kbX-AZ-apT"/>
                 <outlet property="gameName" destination="y39-WG-3Qp" id="Rs3-M4-iVL"/>
+                <outlet property="joinToGameButton" destination="Eod-DT-dgF" id="sHs-D7-nyF"/>
             </connections>
             <point key="canvasLocation" x="391.304347826087" y="124.55357142857142"/>
         </collectionViewCell>
